@@ -1,0 +1,334 @@
+{
+  "brand_identity": {
+    "name": "Orange Tree Capital",
+    "tagline": "Operator-led family office backing global technology founders — India, SEA, and the US.",
+    "positioning": "India-first with global optionality. Operator DNA family office investing across Direct Tech Startup Bets, Venture Fund LP Positions, and Public Markets.",
+    "art_direction": "Sequoia / Accel Editorial Luxury — Kinetic hero with masked line reveal, numbered manifesto chapters, warm architectural neutrals with restrained Orange Tree logo orange accent, high-contrast serif headlines, micro-interactions, Lenis momentum smooth scrolling, ambient 3D/canvas focal element."
+  },
+  "color_palette": {
+    "primary_accent": {
+      "hex": "#E85D04",
+      "name": "Orange Tree Burnt Ochre",
+      "usage": "Restrained accent for interactive highlights, focus rings, status indicators, hover underlines, primary CTA fills/borders. NEVER global gradient fills."
+    },
+    "secondary_accent": {
+      "hex": "#D94E00",
+      "name": "Deep Sunset Warm Accent",
+      "usage": "Hover states for primary orange CTA, deep accent text highlights"
+    },
+    "surface_background": {
+      "hex": "#FAF8F5",
+      "name": "Warm Ivory / Off-White",
+      "usage": "Primary canvas background for editorial lightness and warmth"
+    },
+    "surface_card": {
+      "hex": "#F3EFEA",
+      "name": "Alabaster Stone",
+      "usage": "Cards, bento tiles, hover state containers, form input backgrounds"
+    },
+    "surface_dark": {
+      "hex": "#1A1816",
+      "name": "Warm Obsidian Near-Black",
+      "usage": "High contrast sections (Hero background mode / Dark bento highlight / Footer canvas)"
+    },
+    "text_primary": {
+      "hex": "#121110",
+      "name": "Charcoal Black",
+      "usage": "Dominant headlines and primary body text"
+    },
+    "text_secondary": {
+      "hex": "#66615C",
+      "name": "Muted Slate Grey",
+      "usage": "Sub-captions, metadata, manifesto section tags"
+    },
+    "border_subtle": {
+      "hex": "#E2DCD5",
+      "name": "Warm Architectural Hairline Border",
+      "usage": "1px crisp container dividers and grid lines"
+    },
+    "forbidden_colors": [
+      "#7351B7",
+      "Teal #1B93A4",
+      "Generic pure blue #007AFF for main text",
+      "Pure #000000 black without warm tint"
+    ]
+  },
+  "typography": {
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+    "font_families": {
+      "display_serif": "'Instrument Serif', 'Cinzel', Georgia, serif",
+      "body_sans": "'Plus Jakarta Sans', system-ui, sans-serif",
+      "code_mono": "'JetBrains Mono', monospace"
+    },
+    "forbidden_heading_fonts": [
+      "Inter",
+      "Roboto",
+      "Open Sans",
+      "Space Grotesk"
+    ],
+    "type_scale": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.08] tracking-tight font-serif text-[#121110]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight font-serif tracking-tight text-[#121110]",
+      "h3_subtitle": "text-xl sm:text-2xl font-medium leading-snug font-sans text-stone-800",
+      "body_large": "text-lg sm:text-xl font-light leading-relaxed font-sans text-stone-700",
+      "body_base": "text-base font-normal leading-relaxed font-sans text-stone-600",
+      "meta_overline": "text-xs uppercase tracking-[0.2em] font-mono text-[#E85D04] font-medium"
+    }
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto",
+    "section_vertical_spacing": "py-24 lg:py-36",
+    "bento_grid_system": "Grid 12-col asymmetric system with 1px border dividers (border-stone-300/60) and generous inner padding (p-8 lg:p-12)",
+    "mobile_first_rule": "Strict stack-to-grid progression (grid-cols-1 md:grid-cols-2 lg:grid-cols-3 or lg:grid-cols-12)"
+  },
+  "sections": {
+    "section_1_hero": {
+      "name": "Kinetic Manifesto Hero",
+      "element_id": "hero",
+      "layout": "Asymmetric 12-column layout. Left 8 cols: Line-by-line masked text reveal + 'Pitch Us' magnetic CTA + positioning tag. Right 4 cols: Interactive 3D/Canvas abstract geometric node or parallax floating glass artifact.",
+      "headline": "Operator-led family office backing global technology founders — India, SEA, and the US.",
+      "subtext": "We partner with visionary engineers and category builders from Seed to Growth through direct bets, fund LP positions, and public market strategies.",
+      "cta": {
+        "text": "Pitch Us Your Vision",
+        "link": "#pitch-us",
+        "style": "Pill-shaped bg-[#121110] text-white hover:bg-[#E85D04] transition-colors duration-300 shadow-lg px-8 py-4 font-sans text-sm font-semibold tracking-wide flex items-center gap-3"
+      },
+      "signature_moment": "Masked line-by-line reveal using Framer Motion split-type animation + floating ambient orange warm glow."
+    },
+    "section_2_what_we_do": {
+      "name": "What We Do — Three Strategic Pillars",
+      "element_id": "what-we-do",
+      "layout": "Numbered Manifesto Style. 3 asymmetric columns (or full-width expandable editorial rows) for Direct Investments, Venture Fund LP Positions, and Public Markets.",
+      "cards": [
+        {
+          "number": "01",
+          "title": "Direct Investments",
+          "description": "High-conviction early & growth stage capital for tech founders building out of India & SEA for global markets.",
+          "badge": "Seed to Series B"
+        },
+        {
+          "number": "02",
+          "title": "Venture Fund LP Positions",
+          "description": "Anchor LP commitments to top-tier micro-VCs, sector-specialist GPs, and emerging venture platforms across India and US.",
+          "badge": "GP & Fund LP Network"
+        },
+        {
+          "number": "03",
+          "title": "Public Markets",
+          "description": "Long-term compound capital deployed into publicly traded global tech monopolies and post-IPO category leaders.",
+          "badge": "Compounder Capital"
+        }
+      ]
+    },
+    "section_3_portfolio": {
+      "name": "Portfolio & Investments Grid",
+      "element_id": "portfolio",
+      "layout": "Clean tabbed or grouped interactive grid with direct investments, fund LP logos, and notable exits.",
+      "hover_behavior": "Hover reveal showing sub-sector tags (e.g. DeepTech, Enterprise AI, FinTech, SaaS, SpaceTech), stage, and geographic reach.",
+      "sub_sector_tags": [
+        "DeepTech",
+        "Enterprise AI",
+        "DevTools",
+        "FinTech",
+        "HealthTech",
+        "Supply Chain"
+      ],
+      "items": [
+        {
+          "name": "Sarvam AI",
+          "category": "Direct Investment",
+          "tag": "Sovereign AI / DeepTech",
+          "stage": "Series A",
+          "location": "India / US",
+          "status": "Active"
+        },
+        {
+          "name": "Agnikul Cosmos",
+          "category": "Direct Investment",
+          "tag": "SpaceTech / DeepTech",
+          "stage": "Series B",
+          "location": "India",
+          "status": "Active"
+        },
+        {
+          "name": "Krutrim",
+          "category": "Direct Investment",
+          "tag": "LLM Infrastructure",
+          "stage": "Series A",
+          "location": "India",
+          "status": "Active"
+        },
+        {
+          "name": "Perfios",
+          "category": "Direct Investment",
+          "tag": "B2B SaaS / FinTech",
+          "stage": "Growth",
+          "location": "India / SEA",
+          "status": "Active"
+        },
+        {
+          "name": "Blume Ventures",
+          "category": "Fund LP Position",
+          "tag": "Seed VC Fund",
+          "stage": "LP Commitment",
+          "location": "India",
+          "status": "Active LP"
+        },
+        {
+          "name": "Peak XV Surge",
+          "category": "Fund LP Position",
+          "tag": "Early Stage Ecosystem",
+          "stage": "LP Commitment",
+          "location": "India & SEA",
+          "status": "Active LP"
+        },
+        {
+          "name": "Postman",
+          "category": "Exit / Notable Mark",
+          "tag": "API Infrastructure / Enterprise SaaS",
+          "stage": "Early Backer",
+          "location": "US / India",
+          "status": "Partial Exit"
+        },
+        {
+          "name": "Razorpay",
+          "category": "Exit / Notable Mark",
+          "tag": "Payments / FinTech",
+          "stage": "Early Backer",
+          "location": "India",
+          "status": "Exit"
+        }
+      ]
+    },
+    "section_4_team": {
+      "name": "Team & Operator DNA",
+      "element_id": "team",
+      "layout": "4-member responsive editorial team grid. High contrast portraits, subtle hover zoom, direct LinkedIn links, background summary.",
+      "members": [
+        {
+          "name": "Vikramaditya Roy",
+          "role": "Managing Partner & Founder",
+          "bio": "Ex-founder, 15+ years scaling enterprise SaaS in India & Silicon Valley. Serial angel investor in 40+ startups.",
+          "image": "https://images.unsplash.com/photo-1641260783083-a0af6cf964ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+          "linkedin": "https://linkedin.com/in/example-vikramaditya"
+        },
+        {
+          "name": "Ananya Sharma",
+          "role": "Partner — DeepTech & Growth",
+          "bio": "Former VP of Engineering at global unicorn. Leads technical due diligence and cross-border expansion.",
+          "image": "https://images.unsplash.com/photo-1758598306845-8630d064a244?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+          "linkedin": "https://linkedin.com/in/example-ananya"
+        },
+        {
+          "name": "Rohan Mehta",
+          "role": "Partner — Fund LP & Public Strategy",
+          "bio": "Ex-Goldman Sachs M&A, manages LP relationships across US VCs and public market allocation strategies.",
+          "image": "https://images.unsplash.com/photo-1767175473698-859bc73e8e64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwzfHx0ZWNoJTIwcGFydG5lciUyMGZvdW5kZXIlMjBleGVjdXRpdmUlMjBwb3J0cmFpdCUyMG1hbGUlMjBzdHVkaW98ZW58MHx8fHwxNzg4MjU5NTA5fDA&ixlib=rb-4.1.0&q=85",
+          "linkedin": "https://linkedin.com/in/example-rohan"
+        },
+        {
+          "name": "Priya Nair",
+          "role": "Principal — Founder Operations & Platform",
+          "bio": "Specializes in GTM strategy, executive talent hiring, and accelerator partner networks across India & SEA.",
+          "image": "https://images.unsplash.com/photo-1685760259914-ee8d2c92d2e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+          "linkedin": "https://linkedin.com/in/example-priya"
+        }
+      ]
+    },
+    "section_5_edge": {
+      "name": "Why Pitch Us — 4 Strategic Edge Tiles",
+      "element_id": "edge",
+      "layout": "2x2 asymmetric Bento layout with subtle grid lines, hover illumination with orange tint outline.",
+      "tiles": [
+        {
+          "icon": "UsersThree",
+          "title": "Operator DNA",
+          "description": "Built and scaled companies ourselves. We provide real operational muscle on pricing, engineering, and talent—not just passive capital."
+        },
+        {
+          "icon": "GlobeHemisphereWest",
+          "title": "Cross-Border Reach",
+          "description": "Seamless bridge connecting India's deep tech talent with US GTM enterprise buyers and SEA market access."
+        },
+        {
+          "icon": "Lightning",
+          "title": "Speed & Follow-On",
+          "description": "Decisions in days, not months. We reserve generous capital for follow-on rounds to support founders through thick and thin."
+        },
+        {
+          "icon": "Network",
+          "title": "Accelerator + GP Network",
+          "description": "Deep syndication ties with top micro-VCs, angel syndicates, and premier global accelerator platforms."
+        }
+      ]
+    },
+    "section_6_pitch_us": {
+      "name": "Pitch Us — Founder Application Form",
+      "element_id": "pitch-us",
+      "layout": "High-trust dual column section. Left side: Narrative invitation + founder testimonials quote + contact response commitment (<48 hrs). Right side: Form container with interactive client-side validation, PDF deck upload preview (<=20MB), and Toast confirmation.",
+      "fields": [
+        "Name",
+        "Email",
+        "Company Name",
+        "Website URL",
+        "Sector",
+        "Stage (Pre-Seed, Seed, Series A, Series B+)",
+        "One-Liner Pitch",
+        "Upload Pitch Deck (PDF <= 20MB)"
+      ],
+      "toast_feedback": "Application Submitted — Our partners will review and respond within 48 hours."
+    },
+    "section_7_footer": {
+      "name": "Footer — Global Presence & Identity",
+      "element_id": "footer",
+      "layout": "Dark architectural footer with large kinetic brand typography ('ORANGE TREE CAPITAL'), location nodes (Bengaluru | Singapore | San Francisco), direct email links, and copyright.",
+      "locations": [
+        "Bengaluru, India",
+        "Singapore",
+        "San Francisco, USA"
+      ]
+    }
+  },
+  "motion_and_microinteractions": {
+    "smooth_scroll": "Lenis smooth scroll integration for continuous momentum.",
+    "marquee": "Slow editorial marquee band drifting across sections with custom typography: 'OPERATOR CAPITAL • INDIA & US TECH • DEEPTECH • ENTERPRISE SAAS • LP ALLOCATIONS'.",
+    "scroll_reveal": "Framer Motion staggered entrance (y: 30 to 0, opacity: 0 to 1, transition duration: 0.7s, ease: [0.215, 0.61, 0.355, 1]).",
+    "hover_states": "Micro-transitions on buttons and cards (scale: 1.01, subtle shadow elevation, border-orange-500/40 glow)."
+  },
+  "3d_libraries_and_effects": {
+    "canvas_hero": "Three.js / React Three Fiber interactive minimal abstract ambient orb/node mesh (tinted orange #E85D04 & warm grey) responding gently to cursor hover.",
+    "fallback_canvas": "CSS radial gradient mesh with canvas particle animation."
+  },
+  "image_urls": {
+    "team": [
+      "https://images.unsplash.com/photo-1641260783083-a0af6cf964ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758598306845-8630d064a244?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1767175473698-859bc73e8e64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwzfHx0ZWTechJhbWVsZSUyMGZvdW5kZXIlMjBleGVjdXRpdmUlMjBwb3J0cmFpdCUyMG1hbGUlMjBzdHVkaW98ZW58MHx8fHwxNzg4MjU5NTA5fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1685760259914-ee8d2c92d2e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "abstract_textures": [
+      "https://images.unsplash.com/photo-1693899849404-c65b391d3d74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwbHV4dXJ5JTIwYXJjaGl0ZWN0dXJhbCUyMHRleHR1cmUlMjBkYXJrJTIwd2FybSUyMGdyZXklMjBvcmFuZ2UlMjBhY2NlbnR8ZW58MHx8fHwxNzg4MjU5NTEzfDA&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Create component files with .js/.jsx extensions (React app in JS context). Ensure high-quality modular design.",
+    "Import fonts: 'Instrument Serif' and 'Plus Jakarta Sans' in public/index.html or index.css.",
+    "Implement Lenis smooth scrolling for luxury momentum feeling.",
+    "Ensure all interactive elements (buttons, inputs, links, tabs, team cards, pitch form submit) include clear kebab-case `data-testid` attributes.",
+    "Use Sonner for toast notification on pitch form submission with validation handling (file size check <= 20MB, required fields).",
+    "Keep Orange Tree logo orange (#E85D04) restrained — apply only as an accent badge, button focus state, or kinetic dot accent, never blanket full-page bright orange.",
+    "Provide interactive filtering/tabs in Portfolio section (Direct Investments, Fund LPs, Exits, All) with hover sub-sector badges."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container. Preserve natural reading hierarchy.",
+    "Always use modern button styles (pill-shaped or crisp architectural) with micro-interactions.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡 for UI icons. Use Lucide or Phosphor React icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "All key interactive elements MUST include `data-testid` attributes."
+  ]
+}

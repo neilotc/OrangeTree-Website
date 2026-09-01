@@ -1,0 +1,89 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Reveal, ChapterHeader, EASE } from "./Reveal";
+import { PORTFOLIO, PORTFOLIO_DISCLAIMER } from "@/data/content";
+
+const TABS = [
+  { key: "all", label: "All" },
+  { key: "direct", label: "Direct Investments" },
+  { key: "fund", label: "Fund Investments" },
+  { key: "exit", label: "Exits" },
+];
+
+const Portfolio = () => {
+  const [tab, setTab] = useState("all");
+  const items = PORTFOLIO.filter((p) => tab === "all" || p.type === tab);
+
+  return (
+    <section
+      id="portfolio"
+      data-testid="portfolio-section"
+      className="bg-alabaster border-y border-hairline"
+    >
+      <div className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-24 lg:py-36">
+        <ChapterHeader
+          number="02"
+          label="Portfolio"
+          title="A pattern you can check yourself against."
+        />
+
+        <Reveal className="flex flex-wrap gap-2 mb-12">
+          {TABS.map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              data-testid={`portfolio-tab-${t.key}`}
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-colors duration-300 ${
+                tab === t.key
+                  ? "bg-charcoal text-ivory"
+                  : "bg-transparent text-slate-warm border border-hairline hover:border-charcoal/40"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </Reveal>
+
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-hairline border border-hairline">
+          <AnimatePresence mode="popLayout">
+            {items.map((p) => (
+              <motion.div
+                layout
+                key={p.name}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.4, ease: EASE }}
+                className="group relative bg-ivory p-8 min-h-[11rem] flex flex-col justify-between hover:bg-alabaster transition-colors duration-300"
+                data-testid={`portfolio-item-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg group-hover:bg-ochre transition-colors duration-300">
+                    {p.name.charAt(0)}
+                  </span>
+                  <span className="font-sans font-semibold text-charcoal">{p.name}</span>
+                </div>
+                <div className="mt-6">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
+                    {p.geography}
+                  </p>
+                  <p className="mt-2 inline-block text-xs font-medium text-ochre opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,transform] duration-300">
+                    {p.sector}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        <Reveal className="mt-10">
+          <p className="text-xs leading-relaxed text-slate-warm max-w-3xl" data-testid="portfolio-disclaimer">
+            {PORTFOLIO_DISCLAIMER}
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+export default Portfolio;
