@@ -12,15 +12,14 @@ export const NAV_LINKS = [
 ];
 
 export const HERO = {
-  overline: "Orange Tree Capital — Family Office",
   lines: [
-    "Operator-led family office",
-    "backing technology founders.",
-    "India first, global when",
-    "it matters.",
+    "Different experiences.",
+    "Diverse perspectives.",
+    "Shaping our approach",
+    "to investing.",
   ],
   subline:
-    "Direct startup bets, venture fund LP positions, and public markets — with cross-border reach across India, Southeast Asia, and the US.",
+    "Backing startups, venture funds, and public markets - with cross-border reach across India, Southeast Asia, and the US.",
   cta: "Pitch Us",
 };
 

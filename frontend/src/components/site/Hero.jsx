@@ -23,16 +23,6 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full py-24">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-ochre mb-8"
-          data-testid="hero-overline"
-        >
-          {HERO.overline}
-        </motion.p>
-
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-charcoal max-w-3xl">
           {HERO.lines.map((line, i) => (
             <span key={i} className="block overflow-hidden pb-1">
