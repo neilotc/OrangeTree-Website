@@ -10,7 +10,7 @@ const WhatWeDo = () => (
     <ChapterHeader
       number="01"
       label="What We Do"
-      title="Three ways we put capital to work — no blur between them."
+      title="Three ways we put capital to work"
     />
     <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-l border-hairline">
       {PILLARS.map((p, i) => (
