@@ -67,7 +67,7 @@ const Portfolio = () => {
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
                     {p.geography}
                   </p>
-                  <p className="mt-2 inline-block text-xs font-medium text-ochre opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,transform] duration-300">
+                  <p className="mt-2 inline-block text-xs font-medium text-ochre">
                     {p.sector}
                   </p>
                 </div>
