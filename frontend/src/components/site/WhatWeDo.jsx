@@ -19,11 +19,11 @@ const WhatWeDo = () => (
             className="group p-8 lg:p-12 h-full flex flex-col hover:bg-alabaster transition-colors duration-300"
             data-testid={`pillar-card-${p.number}`}
           >
-            <div className="flex items-center justify-between h-12 mb-10">
-              <span className="font-serif text-5xl leading-none text-hairline group-hover:text-ochre transition-colors duration-300">
+            <div className="flex items-center gap-5 h-12 mb-10">
+              <span className="font-serif text-5xl leading-none font-semibold text-charcoal group-hover:text-ochre transition-colors duration-300">
                 {p.number}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm border border-hairline rounded-full px-3 py-1 whitespace-nowrap">
+              <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-charcoal border border-charcoal/30 rounded-full px-3 py-1 whitespace-nowrap">
                 {p.badge}
               </span>
             </div>
