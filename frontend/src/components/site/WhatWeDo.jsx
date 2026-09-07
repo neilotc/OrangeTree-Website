@@ -23,7 +23,7 @@ const WhatWeDo = () => (
               <span className="font-serif text-5xl leading-none font-semibold text-ochre group-hover:text-ochre-deep transition-colors duration-300">
                 {p.number}
               </span>
-              <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-ochre-deep border border-ochre bg-ochre/10 rounded-full px-3 py-1 whitespace-nowrap group-hover:bg-ochre group-hover:text-ivory transition-colors duration-300">
+              <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-ochre-deep border border-ochre bg-ochre/10 rounded-full px-3 py-1 whitespace-nowrap translate-y-[3px] group-hover:bg-ochre group-hover:text-ivory transition-colors duration-300">
                 {p.badge}
               </span>
             </div>
