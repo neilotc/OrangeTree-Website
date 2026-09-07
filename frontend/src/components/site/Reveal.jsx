@@ -32,12 +32,14 @@ export const ChapterHeader = ({ number, label, title, dark = false }) => (
         {label}
       </span>
     </div>
-    <h2
-      className={`font-serif text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl ${
-        dark ? "text-ivory" : "text-charcoal"
-      }`}
-    >
-      {title}
-    </h2>
+    {title && (
+      <h2
+        className={`font-serif text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl ${
+          dark ? "text-ivory" : "text-charcoal"
+        }`}
+      >
+        {title}
+      </h2>
+    )}
   </Reveal>
 );
