@@ -52,7 +52,7 @@ export const PILLARS = [
     title: "Public Markets",
     badge: "Multi-Asset Capital",
     description:
-      "Long-duration capital deployed into publicly traded technology compounders — patient, concentrated, and aligned with how we underwrite private companies.",
+      "Partnering with leading institutions to access public markets across asset classes and geographies.",
   },
 ];
 
