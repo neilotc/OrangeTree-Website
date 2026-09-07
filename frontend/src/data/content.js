@@ -38,7 +38,7 @@ export const PILLARS = [
     title: "Direct Investments",
     badge: "Seed to Series A",
     description:
-      "High-conviction early and growth cheques into technology founders building out of India for global markets. Sector lean: deeptech and enterprise tech — open to adjacent tech.",
+      "Backing technology-led businesses with category-defining potential.",
   },
   {
     number: "02",
