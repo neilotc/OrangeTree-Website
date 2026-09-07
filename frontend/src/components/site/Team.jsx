@@ -39,6 +39,11 @@ const Team = () => (
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ochre mt-1">
               {m.role}
             </p>
+            {m.sub && (
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ochre">
+                {m.sub}
+              </p>
+            )}
           </div>
         </Reveal>
       ))}

@@ -79,27 +79,29 @@ export const PORTFOLIO_DISCLAIMER =
 export const TEAM = [
   {
     name: "Neil Mehta",
-    role: "Managing Partner (Private Markets)",
+    role: "Managing Partner",
+    sub: "Private Markets",
     image: "/team/neil.jpg",
     linkedin: "https://www.linkedin.com/in/neil-mehta-92bb712/",
   },
   {
     name: "Reema Mehta",
-    role: "Managing Partner (Public Markets)",
+    role: "Managing Partner",
+    sub: "Public Markets",
     image: "/team/reema.jpg",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/reema-mehta-467977332/",
   },
   {
     name: "Yashraj Shetty",
     role: "Investment Associate",
     image: "/team/yashraj.jpg",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/yashraj-shetty-3bab97b8/",
   },
   {
     name: "Raj Soni",
     role: "Investment Analyst",
     image: "/team/raj.jpg",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/-raj-soni-/",
   },
 ];
 
