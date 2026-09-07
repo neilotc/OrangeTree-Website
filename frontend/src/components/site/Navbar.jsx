@@ -28,7 +28,7 @@ const Navbar = () => {
             data-testid="nav-pitch-us-btn"
             className="rounded-full bg-charcoal text-ivory text-sm font-medium px-5 py-2 hover:bg-ochre transition-colors duration-300"
           >
-            Pitch Us
+            Pitch to us
           </a>
         </div>
         <button
@@ -65,7 +65,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="rounded-full bg-charcoal text-ivory text-sm font-medium px-5 py-2.5 text-center"
               >
-                Pitch Us
+                Pitch to us
               </a>
             </div>
           </motion.div>

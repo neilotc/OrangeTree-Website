@@ -20,16 +20,14 @@ export const HERO = {
   ],
   subline:
     "Backing startups, venture funds, and public markets with cross-border reach across India, Southeast Asia, and the US.",
-  cta: "Pitch Us",
+  cta: "Pitch to us",
 };
 
 export const MARQUEE_ITEMS = [
-  "Operator Capital",
   "India First",
   "DeepTech",
   "Enterprise Tech",
-  "Southeast Asia",
-  "United States",
+  "Patient Capital",
   "Follow-On Muscle",
   "Founder-Aligned",
 ];
@@ -38,7 +36,7 @@ export const PILLARS = [
   {
     number: "01",
     title: "Direct Investments",
-    badge: "Seed to Series B",
+    badge: "Seed to Series A",
     description:
       "High-conviction early and growth cheques into technology founders building out of India for global markets. Sector lean: deeptech and enterprise tech — open to adjacent tech.",
   },
@@ -52,7 +50,7 @@ export const PILLARS = [
   {
     number: "03",
     title: "Public Markets",
-    badge: "Compounder Capital",
+    badge: "Multi-Asset Capital",
     description:
       "Long-duration capital deployed into publicly traded technology compounders — patient, concentrated, and aligned with how we underwrite private companies.",
   },

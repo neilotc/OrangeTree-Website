@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { HERO } from "@/data/content";
 import { EASE } from "./Reveal";
-import HeroCanvas from "./HeroCanvas";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -18,9 +17,6 @@ const Hero = () => {
         style={{ y: glowY }}
         className="absolute -top-32 -right-32 w-[42rem] h-[42rem] rounded-full bg-ochre/10 blur-3xl pointer-events-none"
       />
-      <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 opacity-90">
-        <HeroCanvas />
-      </div>
 
       <div className="relative z-10 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full py-24">
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-charcoal max-w-3xl">
@@ -68,16 +64,6 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-6 sm:left-12 lg:left-20 flex items-center gap-3 text-slate-warm"
-      >
-        <span className="font-mono text-xs tracking-[0.2em]">SCROLL</span>
-        <span className="h-px w-10 bg-slate-warm/50" />
-      </motion.div>
     </section>
   );
 };
