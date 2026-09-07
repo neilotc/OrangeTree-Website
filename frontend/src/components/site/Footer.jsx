@@ -6,12 +6,14 @@ const Footer = () => (
   <footer id="footer" data-testid="footer-section" className="bg-obsidian text-ivory border-t border-stone-800">
     <div className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto pt-20 pb-10">
       <Reveal>
-        <p
-          className="font-serif text-[13vw] lg:text-[7.5rem] leading-none tracking-tight text-ivory/95 whitespace-nowrap overflow-hidden"
-          data-testid="footer-wordmark"
-        >
-          Orange Tree <span className="italic text-ochre">Capital</span>
-        </p>
+        <div className="overflow-hidden">
+          <img
+            src="/logo.png"
+            alt="Orange Tree Capital"
+            className="h-16 sm:h-24 lg:h-32 w-auto"
+            data-testid="footer-wordmark"
+          />
+        </div>
       </Reveal>
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-stone-800 pt-10">
