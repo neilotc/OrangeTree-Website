@@ -80,29 +80,25 @@ export const TEAM = [
   {
     name: "Neil Mehta",
     role: "Managing Partner (Private Markets)",
-    image:
-      "https://images.unsplash.com/photo-1641260783083-a0af6cf964ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+    image: "/team/neil.jpg",
     linkedin: "https://www.linkedin.com/in/neil-mehta-92bb712/",
   },
   {
     name: "Reema Mehta",
     role: "Managing Partner (Public Markets)",
-    image:
-      "https://images.unsplash.com/photo-1758598306845-8630d064a244?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+    image: "/team/reema.jpg",
     linkedin: "https://www.linkedin.com/",
   },
   {
     name: "Yashraj Shetty",
     role: "Investment Associate",
-    image:
-      "https://images.unsplash.com/photo-1767175473698-859bc73e8e64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwzfHx0ZWNoJTIwcGFydG5lciUyMGZvdW5kZXIlMjBleGVjdXRpdmUlMjBwb3J0cmFpdCUyMG1hbGUlMjBzdHVkaW98ZW58MHx8fHwxNzg4MjU5NTA5fDA&ixlib=rb-4.1.0&q=85",
+    image: "/team/yashraj.jpg",
     linkedin: "https://www.linkedin.com/",
   },
   {
     name: "Raj Soni",
     role: "Investment Analyst",
-    image:
-      "https://images.unsplash.com/photo-1685760259914-ee8d2c92d2e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
+    image: "/team/raj.jpg",
     linkedin: "https://www.linkedin.com/",
   },
 ];
