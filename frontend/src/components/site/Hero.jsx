@@ -3,7 +3,7 @@ import { ArrowDownRight } from "lucide-react";
 import { HERO } from "@/data/content";
 import { EASE } from "./Reveal";
 
-const Hero = () => {
+const Hero = ({ active = true }) => {
   const { scrollY } = useScroll();
   const glowY = useTransform(scrollY, [0, 600], [0, 160]);
 
@@ -25,8 +25,8 @@ const Hero = () => {
               <motion.span
                 className={`block ${i === HERO.lines.length - 1 ? "italic text-ochre" : ""}`}
                 initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.9, delay: 0.35 + i * 0.13, ease: EASE }}
+                animate={active ? { y: 0 } : { y: "110%" }}
+                transition={{ duration: 0.9, delay: 0.15 + i * 0.13, ease: EASE }}
                 data-testid={`hero-line-${i}`}
               >
                 {line}
@@ -37,8 +37,8 @@ const Hero = () => {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
+          animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: EASE }}
           className="mt-8 max-w-xl text-base sm:text-lg font-light leading-relaxed text-slate-warm"
           data-testid="hero-subline"
         >
@@ -47,8 +47,8 @@ const Hero = () => {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.3, ease: EASE }}
+          animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 1, ease: EASE }}
           className="mt-10"
         >
           <a

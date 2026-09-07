@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
+import { AnimatePresence } from "framer-motion";
 import { Toaster } from "sonner";
 import "@/App.css";
+import Intro from "@/components/site/Intro";
 import Navbar from "@/components/site/Navbar";
 import Hero from "@/components/site/Hero";
 import Marquee from "@/components/site/Marquee";
@@ -13,8 +15,16 @@ import PitchForm from "@/components/site/PitchForm";
 import Footer from "@/components/site/Footer";
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
   useEffect(() => {
     document.title = "Orange Tree Capital — Operator-led family office, India first";
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const t = setTimeout(() => setShowIntro(false), reduce ? 100 : 2200);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
     const lenis = new Lenis({ anchors: true, lerp: 0.09 });
     let raf;
     const loop = (time) => {
@@ -30,9 +40,10 @@ function App() {
 
   return (
     <div className="App bg-ivory">
+      <AnimatePresence>{showIntro && <Intro />}</AnimatePresence>
       <Navbar />
       <main>
-        <Hero />
+        <Hero active={!showIntro} />
         <Marquee />
         <WhatWeDo />
         <Portfolio />
