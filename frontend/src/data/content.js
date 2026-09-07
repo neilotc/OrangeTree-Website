@@ -78,12 +78,12 @@ export const PORTFOLIO_DISCLAIMER =
 
 export const TEAM = [
   {
-    name: "Vikramaditya Roy",
-    role: "Managing Partner & Founder",
-    credential: "Ex-founder; 15+ years scaling enterprise software across India and Silicon Valley.",
+    name: "Neil Mehta",
+    role: "Managing Partner",
+    credential: "",
     image:
       "https://images.unsplash.com/photo-1641260783083-a0af6cf964ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBmb3VuZGVyJTIwdmVudHVyZSUyMGNhcGl0YWwlMjBwb3J0cmFpdCUyMGV4ZWN1dGl2ZSUyMGJ1c2luZXNzbWFuJTIwYnVzaW5lc3N3b21hbnxlbnwwfHx8fDE3ODgyNTk1MDJ8MA&ixlib=rb-4.1.0&q=85",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/neil-mehta-92bb712/",
   },
   {
     name: "Ananya Sharma",

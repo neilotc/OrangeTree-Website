@@ -39,7 +39,6 @@ const Team = () => (
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ochre mt-1">
               {m.role}
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-warm">{m.credential}</p>
           </div>
         </Reveal>
       ))}
