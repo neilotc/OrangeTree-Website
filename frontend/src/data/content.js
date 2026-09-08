@@ -68,9 +68,10 @@ export const PORTFOLIO = [
   { name: "Motion Gestures", type: "direct", sector: "Consumer Tech", geography: "Canada", logo: "/portfolio/motion-gestures.png" },
   { name: "Zerowatt", type: "direct", sector: "CleanTech", geography: "India", logo: "/portfolio/zerowatt.png" },
   { name: "Reflection AI", type: "direct", sector: "AI", geography: "USA", logo: "/portfolio/reflection.png" },
-  { name: "NorthPeak Ventures", type: "fund", sector: "Seed VC", geography: "India" },
-  { name: "Meridian Seed Fund", type: "fund", sector: "Early Stage", geography: "India / SEA" },
-  { name: "Catalyst Micro VC", type: "fund", sector: "DeepTech Focus", geography: "US / India" },
+  { name: "Greenoaks Lindenwood", type: "fund", sector: "Tech Focused", geography: "USA" },
+  { name: "Iron Pillar", type: "fund", sector: "Agnostic", geography: "India / US" },
+  { name: "HealthX", type: "fund", sector: "Healthcare", geography: "Singapore" },
+  { name: "SBC Fintech", type: "fund", sector: "Fintech", geography: "Australia" },
   { name: "PayStream", type: "exit", sector: "Payments / FinTech", geography: "India" },
   { name: "CloudKite", type: "exit", sector: "Enterprise SaaS", geography: "US / India" },
 ];
