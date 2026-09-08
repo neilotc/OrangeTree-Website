@@ -22,7 +22,7 @@ const Portfolio = () => {
     >
       <div className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-24 lg:py-36">
         <ChapterHeader
-          number="02"
+          number="03"
           label="Portfolio"
           title="A pattern you can check yourself against."
         />

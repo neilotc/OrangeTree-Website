@@ -46,9 +46,9 @@ function App() {
         <Hero active={!showIntro} />
         <Marquee />
         <WhatWeDo />
+        <Edge />
         <Portfolio />
         <Team />
-        <Edge />
         <PitchForm />
       </main>
       <Footer />
