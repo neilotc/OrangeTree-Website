@@ -57,13 +57,13 @@ const Portfolio = () => {
                 className="group relative bg-ivory p-8 min-h-[11rem] flex flex-col justify-between hover:bg-alabaster transition-colors duration-300"
                 data-testid={`portfolio-item-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
-                <div className="flex items-center gap-3 min-h-[2.5rem]">
+                <div className="flex items-center gap-3 h-12">
                   {p.logo ? (
                     <img
                       src={p.logo}
                       alt={p.name}
                       loading="lazy"
-                      className="max-h-12 max-w-[11rem] w-auto object-contain object-left"
+                      className="h-10 max-w-[11rem] w-auto object-contain object-left"
                     />
                   ) : (
                     <>
@@ -74,6 +74,9 @@ const Portfolio = () => {
                     </>
                   )}
                 </div>
+                {p.logo && (
+                  <p className="mt-3 font-sans text-sm font-semibold text-charcoal">{p.name}</p>
+                )}
                 <div className="mt-6">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
                     {p.geography}
