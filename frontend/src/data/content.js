@@ -58,14 +58,14 @@ export const PILLARS = [
 
 // type: "direct" | "fund" | "exit"
 export const PORTFOLIO = [
-  { name: "Leegality", type: "direct", sector: "LegalTech", geography: "India" },
-  { name: "Chargeup", type: "direct", sector: "EV", geography: "India" },
-  { name: "Trukky", type: "direct", sector: "Logistics", geography: "India" },
-  { name: "enParadigm", type: "direct", sector: "HR Tech", geography: "India" },
+  { name: "Leegality", type: "direct", sector: "LegalTech", geography: "India", logo: "/portfolio/leegality.png" },
+  { name: "Chargeup", type: "direct", sector: "EV", geography: "India", logo: "/portfolio/chargeup.png" },
+  { name: "Trukky", type: "direct", sector: "Logistics", geography: "India", logo: "/portfolio/trukky.png" },
+  { name: "enParadigm", type: "direct", sector: "HR Tech", geography: "India", logo: "/portfolio/enparadigm.png" },
   { name: "MiClient", type: "direct", sector: "Enterprise", geography: "India" },
   { name: "TakeMe2Space", type: "direct", sector: "Spacetech", geography: "India" },
   { name: "NervGen Pharma", type: "direct", sector: "Pharma", geography: "Canada" },
-  { name: "Motion Gestures", type: "direct", sector: "Consumer Tech", geography: "Canada" },
+  { name: "Motion Gestures", type: "direct", sector: "Consumer Tech", geography: "Canada", logo: "/portfolio/motion-gestures.png" },
   { name: "Zerowatt", type: "direct", sector: "CleanTech", geography: "India" },
   { name: "Reflection AI", type: "direct", sector: "AI", geography: "USA" },
   { name: "NorthPeak Ventures", type: "fund", sector: "Seed VC", geography: "India" },

@@ -57,11 +57,22 @@ const Portfolio = () => {
                 className="group relative bg-ivory p-8 min-h-[11rem] flex flex-col justify-between hover:bg-alabaster transition-colors duration-300"
                 data-testid={`portfolio-item-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
-                <div className="flex items-center gap-3">
-                  <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg group-hover:bg-ochre transition-colors duration-300">
-                    {p.name.charAt(0)}
-                  </span>
-                  <span className="font-sans font-semibold text-charcoal">{p.name}</span>
+                <div className="flex items-center gap-3 min-h-[2.5rem]">
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      loading="lazy"
+                      className="max-h-10 max-w-[10rem] w-auto object-contain object-left"
+                    />
+                  ) : (
+                    <>
+                      <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg group-hover:bg-ochre transition-colors duration-300">
+                        {p.name.charAt(0)}
+                      </span>
+                      <span className="font-sans font-semibold text-charcoal">{p.name}</span>
+                    </>
+                  )}
                 </div>
                 <div className="mt-6">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
