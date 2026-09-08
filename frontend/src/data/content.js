@@ -8,7 +8,7 @@ export const NAV_LINKS = [
   { label: "What We Do", href: "#what-we-do" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Team", href: "#team" },
-  { label: "Why Us", href: "#edge" },
+  { label: "Approach", href: "#edge" },
 ];
 
 export const HERO = {
@@ -108,32 +108,29 @@ export const TEAM = [
   },
 ];
 
-export const EDGE_TILES = [
-  {
-    icon: "Users",
-    title: "Operator DNA",
-    description:
-      "We have built and scaled companies ourselves. Real operating muscle on pricing, engineering, and talent — not passive capital.",
+export const APPROACH = {
+  cards: [
+    {
+      number: "01",
+      title: "What We Look For",
+      statement: "Technology-led. Problem-first. Built for scale.",
+    },
+    {
+      number: "02",
+      title: "How We Invest",
+      statement: "Fast decisions. Capital to follow.",
+    },
+    {
+      number: "03",
+      title: "How We Think",
+      statement: "Flexible capital, without a fixed fund horizon.",
+    },
+  ],
+  band: {
+    title: "How We Help",
+    statement: "Connections that go beyond capital.",
   },
-  {
-    icon: "Globe",
-    title: "Cross-Border Reach",
-    description:
-      "A working bridge between India's technical talent, US enterprise buyers, and Southeast Asian market access.",
-  },
-  {
-    icon: "Zap",
-    title: "Speed & Follow-On",
-    description:
-      "Decisions in days, not months. We reserve capital to back our founders again in the next round.",
-  },
-  {
-    icon: "Network",
-    title: "Accelerator + GP Network",
-    description:
-      "Deep ties with leading accelerators, micro-VCs, and later-stage funds — warm paths to your next round.",
-  },
-];
+};
 
 export const PITCH_META = {
   title: "Pitch Us",
