@@ -72,8 +72,8 @@ export const PORTFOLIO = [
   { name: "Iron Pillar", type: "fund", sector: "Agnostic", geography: "India / US", logo: "/portfolio/iron-pillar.png" },
   { name: "HealthX", type: "fund", sector: "Healthcare", geography: "Singapore", logo: "/portfolio/healthx.png" },
   { name: "SBC Fintech", type: "fund", sector: "Fintech", geography: "Australia", logo: "/portfolio/sbc-fintech.png" },
-  { name: "Dr. Sheth's", type: "exit", sector: "BPC", geography: "India" },
-  { name: "Coupang", type: "exit", sector: "E-Commerce", geography: "South Korea" },
+  { name: "Dr. Sheth's", type: "exit", sector: "BPC", geography: "India", logo: "/portfolio/dr-sheths.png" },
+  { name: "Coupang", type: "exit", sector: "E-Commerce", geography: "South Korea", logo: "/portfolio/coupang.png" },
 ];
 
 export const PORTFOLIO_DISCLAIMER =
