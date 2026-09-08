@@ -63,7 +63,7 @@ const Portfolio = () => {
                       src={p.logo}
                       alt={p.name}
                       loading="lazy"
-                      className="max-h-10 max-w-[10rem] w-auto object-contain object-left"
+                      className="max-h-12 max-w-[11rem] w-auto object-contain object-left"
                     />
                   ) : (
                     <>
