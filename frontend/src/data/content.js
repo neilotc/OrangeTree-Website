@@ -19,7 +19,7 @@ export const HERO = {
     "to investing.",
   ],
   subline:
-    "Backing startups, venture funds, and public markets with cross-border reach across India, Southeast Asia, and the US.",
+    "Backing startups, venture funds, and investments in public markets with cross-border reach across India, Southeast Asia, and the US.",
   cta: "Pitch to us",
 };
 
