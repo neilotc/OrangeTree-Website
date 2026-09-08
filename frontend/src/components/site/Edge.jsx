@@ -1,22 +1,18 @@
-import { ArrowUpRight, Target, Zap, Infinity as InfinityIcon } from "lucide-react";
+import { ArrowUpRight, Target, Zap, Infinity as InfinityIcon, ChevronRight } from "lucide-react";
 import { Reveal, ChapterHeader } from "./Reveal";
 import { APPROACH } from "@/data/content";
 
 const ICONS = [Target, Zap, InfinityIcon];
 
-const Steps = ({ index }) => (
-  <div className="flex items-center gap-1.5" aria-hidden="true">
+const Sequence = ({ index }) => (
+  <div className="flex items-center -space-x-1.5" aria-hidden="true">
     {[0, 1, 2].map((s) => (
-      <span key={s} className="flex items-center gap-1.5">
-        <span
-          className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-            s <= index ? "bg-ochre" : "bg-hairline"
-          }`}
-        />
-        {s < 2 && (
-          <span className={`h-px w-5 ${s < index ? "bg-ochre/50" : "bg-hairline"}`} />
-        )}
-      </span>
+      <ChevronRight
+        key={s}
+        size={16}
+        strokeWidth={s <= index ? 3 : 1.5}
+        className={`transition-colors duration-300 ${s <= index ? "text-ochre" : "text-hairline"}`}
+      />
     ))}
   </div>
 );
@@ -28,6 +24,11 @@ const Edge = () => (
     className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-24 lg:py-36"
   >
     <ChapterHeader number="02" label="Our Investment Approach" />
+    <Reveal className="-mt-8 mb-14 lg:mb-16">
+      <p className="font-serif italic text-lg text-slate-warm" data-testid="approach-scope-note">
+        — how we approach our direct investments in startups
+      </p>
+    </Reveal>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {APPROACH.cards.map((c, i) => {
@@ -42,13 +43,13 @@ const Edge = () => (
                 <span className="w-11 h-11 flex items-center justify-center rounded-full border border-ochre/40 text-ochre group-hover:bg-ochre group-hover:text-ivory group-hover:border-ochre transition-colors duration-300">
                   <Icon size={19} />
                 </span>
-                <Steps index={i} />
+                <Sequence index={i} />
               </div>
               <div className="mt-14">
-                <h3 className="font-serif text-2xl text-ochre-deep mb-4 group-hover:text-ochre transition-colors duration-300">
+                <h3 className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-ochre-deep mb-4">
                   {c.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-warm">{c.statement}</p>
+                <p className="font-serif text-xl lg:text-2xl leading-snug text-charcoal">{c.statement}</p>
               </div>
             </div>
           </Reveal>
