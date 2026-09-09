@@ -24,12 +24,15 @@ export const HERO = {
 };
 
 export const MARQUEE_ITEMS = [
-  "India First",
-  "DeepTech",
-  "Enterprise Tech",
-  "Patient Capital",
-  "Follow-On Muscle",
+  "Technology-led",
+  "Multi-Asset",
+  "Family Office",
+  "Early-Stage Focus",
+  "Long-Term Conviction",
+  "Follow-on Capital",
   "Founder-Aligned",
+  "Operator Mindset",
+  "Beyond Capital",
 ];
 
 export const PILLARS = [

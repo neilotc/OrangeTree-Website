@@ -14,15 +14,9 @@ export const Reveal = ({ children, delay = 0, className = "", y = 30 }) => (
   </motion.div>
 );
 
-export const ChapterHeader = ({ number, label, title, dark = false }) => (
+export const ChapterHeader = ({ label, title, dark = false }) => (
   <Reveal className="mb-14 lg:mb-20">
     <div className="flex items-center gap-4 mb-6">
-      <span
-        className="font-mono text-xs tracking-[0.2em] text-ochre"
-        data-testid={`chapter-${number}-tag`}
-      >
-        {number}
-      </span>
       <span className={`h-px w-16 ${dark ? "bg-stone-700" : "bg-hairline"}`} />
       <span
         className={`font-mono text-xs uppercase tracking-[0.2em] ${
