@@ -90,7 +90,7 @@ const PitchForm = () => {
           <ChapterHeader
             number="05"
             label="Pitch Us"
-            title="Building something serious? We read every deck."
+            title="Building something serious? We’d like to hear from you."
           />
           <Reveal delay={0.1}>
             <a
