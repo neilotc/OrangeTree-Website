@@ -10,7 +10,7 @@ const Footer = () => (
           <img
             src="/logo.png"
             alt="Orange Tree Capital"
-            className="h-16 sm:h-24 lg:h-32 w-auto"
+            className="h-10 sm:h-14 lg:h-16 w-auto"
             data-testid="footer-wordmark"
           />
         </div>
@@ -50,11 +50,8 @@ const Footer = () => (
         </Reveal>
       </div>
 
-      <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-stone-800 pt-8">
+      <div className="mt-14 border-t border-stone-800 pt-8">
         <p className="text-xs text-stone-500" data-testid="footer-copyright">{FOOTER.copyright}</p>
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-stone-600">
-          Operator-led · India first
-        </p>
       </div>
     </div>
   </footer>
