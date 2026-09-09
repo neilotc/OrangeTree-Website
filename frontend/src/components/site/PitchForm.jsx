@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { UploadCloud, FileText, X, ArrowUpRight } from "lucide-react";
 import { Reveal, ChapterHeader } from "./Reveal";
+import TurnstileWidget from "./TurnstileWidget";
 import { PITCH_META, FOOTER } from "@/data/content";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
@@ -25,8 +26,11 @@ const PitchForm = () => {
     name: "", email: "", company: "", website: "", sector: "", stage: "", one_liner: "",
   });
   const [deck, setDeck] = useState(null);
+  const [token, setToken] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const fileRef = useRef(null);
+  const turnstileRef = useRef(null);
+  const onToken = useCallback((t) => setToken(t), []);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
@@ -52,10 +56,15 @@ const PitchForm = () => {
       toast.error("Please attach your pitch deck (PDF).");
       return;
     }
+    if (!token) {
+      toast.error("Please complete the verification.");
+      return;
+    }
     setSubmitting(true);
     try {
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
+      fd.append("turnstile_token", token);
       fd.append("deck", deck);
       await axios.post(`${API}/pitch`, fd, { headers: { "Content-Type": "multipart/form-data" } });
       toast.success("Application submitted — our partners will respond within 48 hours.");
@@ -64,6 +73,8 @@ const PitchForm = () => {
     } catch (err) {
       toast.error(err.response?.data?.detail || "Submission failed. Please try again.");
     } finally {
+      setToken("");
+      turnstileRef.current?.reset();
       setSubmitting(false);
     }
   };
@@ -82,13 +93,6 @@ const PitchForm = () => {
             title="Building something serious? We read every deck."
           />
           <Reveal delay={0.1}>
-            <p className="text-base font-light leading-relaxed text-slate-warm max-w-md">
-              Tell us what you're building in one line, attach your deck, and it lands
-              directly with a partner — not a CRM queue.
-            </p>
-            <p className="mt-6 font-serif italic text-xl text-charcoal" data-testid="pitch-promise">
-              “{PITCH_META.promise}”
-            </p>
             <a
               href={`mailto:${FOOTER.email}`}
               data-testid="pitch-email-link"
@@ -184,14 +188,17 @@ const PitchForm = () => {
               )}
             </Field>
 
-            <button
-              type="submit"
-              disabled={submitting}
-              data-testid="pitch-submit-btn"
-              className="w-full rounded-full bg-charcoal text-ivory text-sm font-semibold tracking-wide px-8 py-4 hover:bg-ochre disabled:opacity-60 transition-colors duration-300"
-            >
-              {submitting ? "Submitting…" : "Submit Pitch"}
-            </button>
+            <div className="flex flex-col items-start gap-4">
+              <TurnstileWidget ref={turnstileRef} onToken={onToken} />
+              <button
+                type="submit"
+                disabled={submitting || !token}
+                data-testid="pitch-submit-btn"
+                className="w-full rounded-full bg-charcoal text-ivory text-sm font-semibold tracking-wide px-8 py-4 hover:bg-ochre disabled:opacity-60 transition-colors duration-300"
+              >
+                {submitting ? "Submitting…" : "Submit Pitch"}
+              </button>
+            </div>
           </form>
         </Reveal>
       </div>

@@ -34,6 +34,33 @@ EMAIL_KEY = os.environ["EMERGENT_EMAIL_KEY"]
 EMAIL_FROM_NAME = os.environ["EMAIL_FROM_NAME"]
 TEAM_EMAIL = os.environ.get("TEAM_EMAIL", "delivered@resend.dev")
 
+# ---------- Cloudflare Turnstile ----------
+TURNSTILE_SECRET = os.environ.get("TURNSTILE_SECRET_KEY", "")
+TURNSTILE_HOSTNAMES = [h.strip() for h in os.environ.get("TURNSTILE_EXPECTED_HOSTNAMES", "").split(",") if h.strip()]
+
+
+async def verify_turnstile(token: str, request: Request):
+    if not TURNSTILE_SECRET:
+        return
+    if not token or len(token) > 2048:
+        raise HTTPException(status_code=400, detail="Bot verification failed")
+    try:
+        async with httpx.AsyncClient(timeout=10) as http:
+            resp = await http.post(
+                "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+                json={"secret": TURNSTILE_SECRET, "response": token},
+            )
+            resp.raise_for_status()
+            result = resp.json()
+    except Exception:
+        raise HTTPException(status_code=503, detail="Verification service unavailable")
+    if not result.get("success"):
+        raise HTTPException(status_code=400, detail="Bot verification failed")
+    hostname = result.get("hostname")
+    is_test_key = TURNSTILE_SECRET.startswith(("1x0000", "2x0000", "3x0000"))
+    if not is_test_key and TURNSTILE_HOSTNAMES and hostname and hostname not in TURNSTILE_HOSTNAMES:
+        raise HTTPException(status_code=400, detail="Verification hostname mismatch")
+
 _SHORTENERS = ("bit.ly", "tinyurl.com", "t.co", "is.gd", "cutt.ly", "goo.gl", "rebrand.ly")
 _CRED_ASK = ("reply with your password", "reply with the code", "send your password", "cvv",
              "send us your password", "enter your password below", "confirm your card number",
@@ -195,8 +222,11 @@ async def submit_pitch(
     sector: str = Form(...),
     stage: str = Form(...),
     one_liner: str = Form(...),
+    turnstile_token: str = Form(""),
     deck: UploadFile = File(...),
 ):
+    await verify_turnstile(turnstile_token, request)
+
     name, company = name.strip(), company.strip()
     if not name or not company or not one_liner.strip():
         raise HTTPException(status_code=400, detail="Missing required fields")
