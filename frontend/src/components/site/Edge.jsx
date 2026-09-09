@@ -41,10 +41,10 @@ const Edge = () => (
                 <Sequence index={i} />
               </div>
               <div className="mt-14">
-                <h3 className="font-serif text-2xl text-ochre-deep mb-4 group-hover:text-ochre transition-colors duration-300">
+                <h3 className="font-serif text-2xl text-ochre-deep mb-4 md:whitespace-nowrap group-hover:text-ochre transition-colors duration-300">
                   {c.title}
                 </h3>
-                <p className="font-sans text-base font-medium leading-relaxed text-charcoal">{c.statement}</p>
+                <p className="font-sans text-base font-medium leading-relaxed text-charcoal md:min-h-[3.5rem]">{c.statement}</p>
               </div>
             </div>
           </Reveal>

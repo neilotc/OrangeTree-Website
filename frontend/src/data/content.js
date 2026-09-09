@@ -6,9 +6,9 @@
 
 export const NAV_LINKS = [
   { label: "What We Do", href: "#what-we-do" },
+  { label: "Approach", href: "#edge" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Team", href: "#team" },
-  { label: "Approach", href: "#edge" },
 ];
 
 export const HERO = {
@@ -19,7 +19,7 @@ export const HERO = {
     "to investing.",
   ],
   subline:
-    "Backing startups, venture funds, and investments in public markets with cross-border reach across India, Southeast Asia, and the US.",
+    "OrangeTree Capital is a family office investing across multiple asset classes, spanning private companies, funds, and public markets, with a presence in India and Singapore.",
   cta: "Pitch to us",
 };
 
