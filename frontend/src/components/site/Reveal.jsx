@@ -19,8 +19,8 @@ export const ChapterHeader = ({ label, title, dark = false }) => (
     <div className="flex items-center gap-4 mb-6">
       <span className={`h-px w-16 ${dark ? "bg-stone-700" : "bg-hairline"}`} />
       <span
-        className={`font-mono text-xs uppercase tracking-[0.2em] ${
-          dark ? "text-stone-400" : "text-slate-warm"
+        className={`font-serif text-2xl sm:text-3xl lg:text-4xl tracking-tight ${
+          dark ? "text-ivory" : "text-charcoal"
         }`}
       >
         {label}

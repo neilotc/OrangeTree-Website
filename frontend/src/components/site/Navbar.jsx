@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ivory/85 backdrop-blur-md border-b border-hairline">
-      <nav className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto h-16 flex items-center justify-between">
+      <nav className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto h-20 flex items-center justify-between">
         <a href="#hero" className="flex items-center" data-testid="nav-logo">
-          <img src="/logo.png" alt="Orange Tree Capital" className="h-9 w-auto" />
+          <img src="/logo.png" alt="Orange Tree Capital" className="h-11 w-auto" />
         </a>
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((l) => (

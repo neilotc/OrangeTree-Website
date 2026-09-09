@@ -11,7 +11,7 @@ const Hero = ({ active = true }) => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
       <motion.div
         style={{ y: glowY }}
@@ -42,7 +42,10 @@ const Hero = ({ active = true }) => {
           className="mt-8 max-w-xl text-base sm:text-lg font-light leading-relaxed text-slate-warm"
           data-testid="hero-subline"
         >
-          {HERO.subline}
+          <span className="font-medium text-ochre">OrangeTree</span>{" "}
+          <span className="font-medium" style={{ color: "#5A5957" }}>Capital</span>{" "}
+          is a family office investing across multiple asset classes, spanning private
+          companies, funds, and public markets, with a presence in India and Singapore.
         </motion.p>
 
         <motion.div

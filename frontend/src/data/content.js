@@ -32,7 +32,7 @@ export const MARQUEE_ITEMS = [
   "Follow-on Capital",
   "Founder-Aligned",
   "Operator Mindset",
-  "Beyond Capital",
+  "Global Perspective",
 ];
 
 export const PILLARS = [
