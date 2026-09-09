@@ -24,7 +24,6 @@ const Portfolio = () => {
         <ChapterHeader
           number="03"
           label="Portfolio"
-          title="A pattern you can check yourself against."
         />
 
         <Reveal className="flex flex-wrap gap-2 mb-12">
