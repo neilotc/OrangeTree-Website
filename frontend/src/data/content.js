@@ -153,9 +153,9 @@ export const PITCH_META = {
 };
 
 export const FOOTER = {
-  address: "Level 8, Prestige Towers, MG Road, Bengaluru 560001, India",
+  address: "Regus - Mumbai, Block A, Level 1, Dr Annie Besant Rd, Shiv Sagar Estate, Worli, Mumbai, Maharashtra 400018",
   email: "pitch@orangetreecapital.co.in",
   linkedin: "https://www.linkedin.com/",
-  locations: ["Bengaluru", "Singapore", "San Francisco"],
+  locations: ["Mumbai", "Singapore"],
   copyright: `© ${new Date().getFullYear()} Orange Tree Capital. All rights reserved.`,
 };
