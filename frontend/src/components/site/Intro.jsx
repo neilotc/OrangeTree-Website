@@ -40,14 +40,15 @@ const Intro = () => (
         />
       ))}
     </motion.div>
-    <motion.p
+    <motion.img
+      src="/logo-wordmark.png"
+      alt="OrangeTree Capital"
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1.1, ease: EASE }}
-      className="mt-8 font-mono text-[10px] sm:text-xs uppercase tracking-[0.35em] text-slate-warm"
-    >
-      Orange Tree Capital
-    </motion.p>
+      className="mt-8 h-6 sm:h-8 w-auto"
+      data-testid="intro-wordmark"
+    />
   </motion.div>
 );
 

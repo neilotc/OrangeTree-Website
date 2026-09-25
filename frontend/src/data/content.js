@@ -48,7 +48,7 @@ export const PILLARS = [
     title: "Fund Investments",
     badge: "LP Positions",
     description:
-      "LP commitments to funds that extend our reach into networks, stages, and geographies beyond our direct book.",
+      "LP commitments to funds that extend our reach into networks, investment stages, and geographies beyond our direct book.",
   },
   {
     number: "03",
