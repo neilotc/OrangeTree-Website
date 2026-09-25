@@ -9,7 +9,7 @@ const Footer = () => (
         <div className="overflow-hidden">
           <img
             src="/logo.png"
-            alt="Orange Tree Capital"
+            alt="OrangeTree Capital"
             className="h-10 sm:h-14 lg:h-16 w-auto"
             data-testid="footer-wordmark"
           />

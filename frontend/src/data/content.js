@@ -157,5 +157,5 @@ export const FOOTER = {
   email: "pitch@orangetreecapital.co.in",
   linkedin: "https://in.linkedin.com/company/orangetreecapital",
   locations: ["Mumbai", "Singapore"],
-  copyright: `© ${new Date().getFullYear()} Orange Tree Capital. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} OrangeTree Capital. All rights reserved.`,
 };

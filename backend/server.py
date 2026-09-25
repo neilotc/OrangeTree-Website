@@ -204,7 +204,7 @@ MAX_DECK_BYTES = 20 * 1024 * 1024
 
 @api_router.get("/")
 async def root():
-    return {"message": "Orange Tree Capital API"}
+    return {"message": "OrangeTree Capital API"}
 
 
 @api_router.get("/health")
@@ -273,10 +273,10 @@ async def submit_pitch(
     founder_html = (
         '<table role="presentation" width="100%"><tr><td style="padding:24px;font-family:Arial,sans-serif;color:#1A1816">'
         f'<p>Hi {escape(name)},</p>'
-        f'<p>Thank you for pitching <strong>{escape(company)}</strong> to Orange Tree Capital. '
+        f'<p>Thank you for pitching <strong>{escape(company)}</strong> to OrangeTree Capital. '
         'Your deck and details have landed with our investment team.</p>'
         '<p>We review every submission and respond within <strong>48 hours</strong>.</p>'
-        '<p style="font-size:12px;color:#888">Sent by Orange Tree Capital — operator-led family office, India first, '
+        '<p style="font-size:12px;color:#888">Sent by OrangeTree Capital — operator-led family office, India first, '
         'with reach across SEA and the US.</p></td></tr></table>'
     )
     team_html = (
@@ -287,7 +287,7 @@ async def submit_pitch(
         f'Sector: {escape(sector)} · Stage: {escape(stage)}</p>'
         f'<p>{escape(one_liner)}</p>'
         f'<p><a href="{deck_url}">Download pitch deck ({escape(filename)})</a></p>'
-        '<p style="font-size:12px;color:#888">Orange Tree Capital — pitch notification</p></td></tr></table>'
+        '<p style="font-size:12px;color:#888">OrangeTree Capital — pitch notification</p></td></tr></table>'
     )
 
     await send_email(to=doc["email"], subject=f"We received your pitch — {company}", html=founder_html, reply_to=TEAM_EMAIL)

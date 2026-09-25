@@ -18,7 +18,7 @@ function App() {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
-    document.title = "Orange Tree Capital — Operator-led family office, India first";
+    document.title = "OrangeTree Capital — Operator-led family office, India first";
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const t = setTimeout(() => setShowIntro(false), reduce ? 100 : 2200);
     return () => clearTimeout(t);
