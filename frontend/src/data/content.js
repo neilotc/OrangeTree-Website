@@ -117,21 +117,29 @@ export const APPROACH = {
       number: "01",
       title: "What We Look For",
       statement: "Technology-led. Problem-first. Built for scale.",
+      detail:
+        "We have a strong preference for enterprise technology, deep tech and B2B businesses, while remaining open to opportunities beyond these areas. Our focus is on businesses addressing meaningful problems in large and growing markets.",
     },
     {
       number: "02",
       title: "How We Invest",
       statement: "Fast decisions. Capital to follow.",
+      detail:
+        "Our sweet spot is Seed to Series A, where we can build conviction early and partner closely with founders. With a lean decision-making structure and dedicated capital for follow-on investments, we can move quickly and back winners as they scale.",
     },
     {
       number: "03",
       title: "How We Think",
       statement: "Flexible capital, without a fixed fund horizon.",
+      detail:
+        "As a family office, our capital is not bound by the constraints of a traditional fund lifecycle or predetermined exit timelines. This gives us the flexibility to structure investments thoughtfully and stay invested for the long term — allowing the business, rather than the fund cycle, to dictate the pace.",
     },
   ],
   band: {
     title: "How We Help",
     statement: "Connections that go beyond capital.",
+    detail:
+      "Our network of business leaders, customers, investors and industry experts helps us create value for our portfolio companies. We help founders connect with potential customers, industry leaders, strategic stakeholders and investors — at the right stage, and at the right time.",
   },
 };
 

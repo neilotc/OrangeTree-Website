@@ -1,40 +1,64 @@
-# Orange Tree Capital — Website Revamp (PRD)
+# OrangeTree Capital — Website PRD
 
 ## Original Problem Statement
-Rebuild orangetreecapital.co.in as a tight, credibility-forward single-page marketing site for an operator-led family office investing in tech (deeptech, enterprise tech, adjacent) via direct startup bets, venture fund LP positions, and public markets. Target visitors: founders (primary), bankers, accelerator partners, GPs. 7 sections: Hero, What We Do, Portfolio, Team, Edge/Why Pitch Us, Pitch Us form (with PDF deck upload ≤20MB), Footer. Editorial Sequoia/Accel feel, orange accent (#E85D04) over warm neutrals, mobile-first, award-worthy motion.
+Build and iteratively refine an editorial, credibility-first single-page marketing website for **OrangeTree Capital**, a family office investing across private companies, venture funds, and public markets. Target visitors: founders (primary), bankers, accelerator partners, fund GPs. Sections: Hero, What We Do, Our Approach to Direct Investments, Portfolio, Team, Pitch Us, Footer. Stack: React + Tailwind + Framer Motion frontend, FastAPI + MongoDB backend, object storage for deck uploads, Resend for email notifications.
 
-## User Decisions
-- Positioning: India-first with global optionality — "Operator-led family office backing technology founders. India first, global when it matters."
-- Portfolio/team/exits: realistic PLACEHOLDER content in one swappable file (`/app/frontend/src/data/content.js`) — user will replace with real names/logos/photos.
-- Email: Emergent-managed Resend (no user key needed) — auto-reply to founder + internal notification.
-- Deck upload: full object storage integration (Emergent object storage), deck download link in team notification.
+## Brand
+- Brand name: **OrangeTree Capital** (no space)
+- Palette: warm off-white `#FAF8F5` (ivory), near-black `#121110` (charcoal), orange `#E85D04` (ochre), dark `#1A1816` (obsidian)
+- Typography: Instrument Serif (display) + Plus Jakarta Sans (body)
+- Contact: `pitch@orangetreecapital.co.in`
+- Address: Regus - Mumbai, Block A, Level 1, Dr Annie Besant Rd, Shiv Sagar Estate, Worli, Mumbai, Maharashtra 400018
+- Presence: Mumbai + Singapore
 
 ## Architecture
-- Frontend: React (JS) + Tailwind + Framer Motion + Lenis smooth scroll. Components in `/app/frontend/src/components/site/`.
-- Backend: FastAPI `/api/pitch` (multipart form), `/api/pitch/{id}/deck` (download), `/api/health`.
-- DB: MongoDB `pitch_submissions` collection (metadata + deck storage path).
-- Storage: Emergent object storage, paths `orangetreecapital/decks/{uuid}.pdf`.
-- Email: Emergent email proxy (Resend), `EMAIL_FROM_NAME="Orange Tree Capital"`.
+- Frontend: React JS + Tailwind CSS + Framer Motion + Lenis smooth scroll
+- Backend: FastAPI, Python, Pydantic
+- DB: MongoDB `pitch_submissions` collection
+- Storage: Emergent object storage (deck PDFs)
+- Email: Emergent-managed Resend (founder auto-reply + team notification to `pitch@orangetreecapital.co.in`)
+- CAPTCHA: Cloudflare Turnstile (test keys in preview; production keys needed before go-live)
 
-## Implemented (Sept 1, 2026)
-- Kinetic hero with masked line-by-line reveal, ambient particle canvas with mouse parallax, orange glow
-- Slow editorial marquee band
-- Numbered manifesto chapters (01–05) across sections
-- What We Do: 3 numbered pillars
-- Portfolio: tabbed grid (All / Direct / Fund LP / Exits) with hover sub-sector reveal + disclaimer
-- Team: 4 members, grayscale-to-color photo hover, LinkedIn links
-- Edge: dark 2x2 bento tiles (Operator DNA, Cross-Border Reach, Speed & Follow-On, Accelerator + GP Network)
-- Pitch Us: full form with client + server validation (PDF only, ≤20MB), object storage upload, Mongo record, founder auto-reply + team notification emails with deck download link
-- Dark footer with kinetic wordmark, address, email, LinkedIn, locations
+## Key Files
+- `/app/frontend/src/data/content.js` — single source of truth for all site copy, portfolio, team, footer
+- `/app/frontend/src/components/site/Edge.jsx` — Approach section with flip cards
+- `/app/frontend/src/components/site/PitchForm.jsx` — pitch submission form
+- `/app/backend/server.py` — FastAPI pitch API, email, storage, CAPTCHA validation
 
-## Pending Manual Steps
-- **TEAM_EMAIL in `/app/backend/.env` is set to `delivered@resend.dev` (test sink)** — replace with the real team inbox for production notifications.
-- Replace placeholder portfolio/team content in `/app/frontend/src/data/content.js` with real data.
-- DNS redeploy to orangetreecapital.co.in at launch.
+## Implemented
+- Animated logo-intro / loading sequence
+- Hero with kinetic line-by-line reveal
+- What We Do: 3 investment pillars
+- Approach (Edge): 4 interactive flip cards (3 grid + 1 wide band) with scaleX animation
+  - Each card flips on click to reveal detailed back-face content (obsidian dark bg)
+  - Front: short tagline; Back: full detail paragraph
+- Portfolio: tabbed grid (Direct / Fund / Exits) with real logos
+- Team: 4 member cards with real photos and LinkedIn links
+- Pitch Us: PDF-only upload ≤20MB, Cloudflare Turnstile CAPTCHA, MongoDB persistence, object storage, auto-reply + team notification emails
+- Footer: Mumbai address, Mumbai/Singapore presence, correct email, LinkedIn link
+- Brand naming corrected to "OrangeTree Capital" throughout codebase
 
-## Backlog
-- P1: Lightweight admin view to browse pitch submissions (open question from brief)
-- P1: Real logo assets for portfolio companies/funds (currently monogram tiles)
-- P2: Lighthouse performance audit pass (target 95+)
-- P2: Compliance disclaimers (deferred per brief)
-- P2: SEO meta/OG tags, favicon, sitemap
+## Pending / Backlog
+### P0
+- (None — site is functionally complete for preview)
+
+### P1
+- Replace Cloudflare Turnstile test keys with real production keys before go-live
+- Deploy / reconfigure DNS for orangetreecapital.co.in when user is ready
+
+### P2
+- Add favicon + Open Graph social share image using `logo-mark.png`
+- Full mobile / cross-browser QA sweep
+- Lightweight pitch admin/browse view (optional, out of scope for v1)
+- SEO meta tags + sitemap
+
+## Completed Feature Log
+| Date | Feature |
+|------|---------|
+| Session 1 | Initial site build: Hero, WhatWeDo, Portfolio, Team, PitchUs, Footer |
+| Session 1 | PDF upload + object storage + Resend email integration |
+| Session 1 | Cloudflare Turnstile CAPTCHA |
+| Session 1 | Real team photos, portfolio logos, LinkedIn links |
+| Session 1 | Footer: real Mumbai address, Singapore presence, correct email |
+| Session 1 | Brand name corrected to "OrangeTree Capital" everywhere |
+| Session 2 | Approach section: 4 flip cards with scaleX animation + back-face detail content |
