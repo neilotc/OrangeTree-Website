@@ -11,14 +11,14 @@ const Hero = ({ active = true }) => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative flex items-center overflow-hidden pt-20 min-h-[calc(100vh-72px)]"
     >
       <motion.div
         style={{ y: glowY }}
         className="absolute -top-32 -right-32 w-[42rem] h-[42rem] rounded-full bg-ochre/10 blur-3xl pointer-events-none"
       />
 
-      <div className="relative z-10 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full py-24">
+      <div className="relative z-10 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full py-16 lg:py-20">
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-charcoal max-w-3xl">
           {HERO.lines.map((line, i) => (
             <span key={i} className="block overflow-hidden pb-1">
