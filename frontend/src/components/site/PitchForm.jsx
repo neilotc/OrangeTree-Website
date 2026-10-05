@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Reveal } from "./Reveal";
+import { ArrowUpRight } from "lucide-react";
+import { Reveal, ChapterHeader } from "./Reveal";
+import { FOOTER } from "@/data/content";
 
 const PitchForm = () => (
   <section
@@ -7,18 +8,25 @@ const PitchForm = () => (
     data-testid="pitch-us-section"
     className="px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-24 lg:py-36"
   >
-    <Reveal>
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-3xl font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-charcoal"
-        data-testid="pitch-message"
-      >
-        Building something serious? We’d like to hear from you.
-      </motion.h2>
-    </Reveal>
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+      <div className="lg:col-span-5">
+        <ChapterHeader
+          number="05"
+          label="Pitch Us"
+          title="Building something serious? We’d like to hear from you."
+        />
+        <Reveal delay={0.1}>
+          <a
+            href={`mailto:${FOOTER.email}`}
+            data-testid="pitch-email-link"
+            className="mt-8 inline-flex items-center gap-2 text-sm text-ochre hover:text-ochre-deep transition-colors duration-200"
+          >
+            Prefer email? {FOOTER.email}
+            <ArrowUpRight size={14} />
+          </a>
+        </Reveal>
+      </div>
+    </div>
   </section>
 );
 
