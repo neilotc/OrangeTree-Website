@@ -29,9 +29,10 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
 - Animated logo-intro / loading sequence
 - Hero with kinetic line-by-line reveal
 - What We Do: 3 investment pillars
-- Approach (Edge): 4 interactive flip cards (3 grid + 1 wide band) with scaleX animation
+- Approach (Edge): 4 interactive flip cards (3 grid + 1 wide band)
   - Each card flips on click to reveal detailed back-face content (obsidian dark bg)
   - Front: short tagline; Back: full detail paragraph
+  - Grid cards use a horizontal fold; the “How We Help” band uses a vertical fold
 - Portfolio: tabbed grid (Direct / Fund / Exits) with real logos
 - Team: 4 member cards with real photos and LinkedIn links
 - Pitch Us: PDF-only upload ≤20MB, Cloudflare Turnstile CAPTCHA, MongoDB persistence, object storage, auto-reply + team notification emails
@@ -40,7 +41,7 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
 
 ## Pending / Backlog
 ### P0
-- (None — site is functionally complete for preview)
+- Verify the Hero / marquee first-viewport positioning across desktop, tablet, and mobile
 
 ### P1
 - Replace Cloudflare Turnstile test keys with real production keys before go-live
@@ -62,3 +63,4 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
 | Session 1 | Footer: real Mumbai address, Singapore presence, correct email |
 | Session 1 | Brand name corrected to "OrangeTree Capital" everywhere |
 | Session 2 | Approach section: 4 flip cards with scaleX animation + back-face detail content |
+| 2026-10-05 | Updated the “How We Help” approach band to use a vertical fold; verified on desktop and mobile previews |

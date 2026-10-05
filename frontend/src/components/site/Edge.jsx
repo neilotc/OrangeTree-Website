@@ -29,24 +29,25 @@ const Sequence = ({ index }) => (
   </div>
 );
 
-/* ─── Shared flip hook (scaleX half-flip, no 3-D stacking issues) ─── */
-const useFlip = () => {
+/* ─── Shared fold hook (no 3-D stacking issues) ─── */
+const useFlip = (axis = "x") => {
   const [showBack, setShowBack] = useState(false);
   const [busy, setBusy] = useState(false);
   const controls = useAnimation();
+  const scaleProperty = axis === "y" ? "scaleY" : "scaleX";
 
   const flip = async () => {
     if (busy) return;
     setBusy(true);
     await controls.start({
-      scaleX: 0,
+      [scaleProperty]: 0,
       transition: { duration: 0.17, ease: [0.4, 0, 1, 1] },
     });
     setShowBack((p) => !p);
     // one rAF so React flushes the new content before we animate in
     await new Promise((r) => requestAnimationFrame(r));
     await controls.start({
-      scaleX: 1,
+      [scaleProperty]: 1,
       transition: { duration: 0.17, ease: [0, 0, 0.6, 1] },
     });
     setBusy(false);
@@ -121,7 +122,7 @@ const ApproachCard = ({ c, index }) => {
 
 /* ─── Full-width band (How We Help) ─── */
 const ApproachBand = ({ band }) => {
-  const { showBack, controls, flip } = useFlip();
+  const { showBack, controls, flip } = useFlip("y");
 
   return (
     <div
@@ -129,7 +130,7 @@ const ApproachBand = ({ band }) => {
       onClick={flip}
       data-testid="approach-band-how-we-help"
     >
-      <motion.div animate={controls} initial={{ scaleX: 1 }}>
+      <motion.div animate={controls} initial={{ scaleY: 1 }}>
         {showBack ? (
           /* ── Back face ── */
           <div className="border border-ochre/20 bg-obsidian px-8 lg:px-12 py-10 lg:py-14 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-16">
