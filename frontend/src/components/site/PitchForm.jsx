@@ -21,7 +21,7 @@ const PitchForm = () => (
             data-testid="pitch-email-link"
             className="mt-8 inline-flex items-center gap-2 text-sm text-ochre hover:text-ochre-deep transition-colors duration-200"
           >
-            Prefer email? {FOOTER.email}
+            Email us at {FOOTER.email}
             <ArrowUpRight size={14} />
           </a>
         </Reveal>
