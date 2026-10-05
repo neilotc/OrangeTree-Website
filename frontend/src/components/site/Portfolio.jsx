@@ -45,47 +45,55 @@ const Portfolio = () => {
 
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-hairline border border-hairline">
           <AnimatePresence mode="popLayout">
-            {items.map((p) => (
-              <motion.div
-                layout
-                key={p.name}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.4, ease: EASE }}
-                className="group relative bg-ivory p-8 min-h-[11rem] flex flex-col justify-between hover:bg-alabaster transition-colors duration-300"
-                data-testid={`portfolio-item-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
-              >
-                <div className="flex items-center gap-3 h-12">
-                  {p.logo ? (
-                    <img
-                      src={p.logo}
-                      alt={p.name}
-                      loading="lazy"
-                      className="h-10 max-w-[11rem] w-auto object-contain object-left"
-                    />
-                  ) : (
-                    <>
-                      <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg group-hover:bg-ochre transition-colors duration-300">
-                        {p.name.charAt(0)}
-                      </span>
-                      <span className="font-sans font-semibold text-charcoal">{p.name}</span>
-                    </>
+            {items.map((p) => {
+              const Card = p.website ? motion.a : motion.div;
+              const cardProps = p.website
+                ? { href: p.website, target: "_blank", rel: "noreferrer", "aria-label": `Visit ${p.name}` }
+                : {};
+
+              return (
+                <Card
+                  layout
+                  key={p.name}
+                  {...cardProps}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.4, ease: EASE }}
+                  className="group relative bg-ivory p-8 min-h-[11rem] flex flex-col justify-between hover:bg-alabaster transition-[background-color,transform] duration-300"
+                  data-testid={`portfolio-item-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  <div className="flex items-center gap-3 h-12">
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        loading="lazy"
+                        className="h-10 max-w-[11rem] w-auto object-contain object-left"
+                      />
+                    ) : (
+                      <>
+                        <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg group-hover:bg-ochre transition-colors duration-300">
+                          {p.name.charAt(0)}
+                        </span>
+                        <span className="font-sans font-semibold text-charcoal">{p.name}</span>
+                      </>
+                    )}
+                  </div>
+                  {p.logo && (
+                    <p className="mt-3 font-sans text-sm font-semibold text-charcoal">{p.name}</p>
                   )}
-                </div>
-                {p.logo && (
-                  <p className="mt-3 font-sans text-sm font-semibold text-charcoal">{p.name}</p>
-                )}
-                <div className="mt-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
-                    {p.geography}
-                  </p>
-                  <p className="mt-2 inline-block text-xs font-medium text-ochre">
-                    {p.sector}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="mt-6">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
+                      {p.geography}
+                    </p>
+                    <p className="mt-2 inline-block text-xs font-medium text-ochre">
+                      {p.sector}
+                    </p>
+                  </div>
+                </Card>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
 

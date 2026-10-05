@@ -34,6 +34,8 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
   - Front: short tagline; Back: full detail paragraph
   - Grid cards use a horizontal fold; the “How We Help” band uses a vertical fold
 - Portfolio: tabbed grid (Direct / Fund / Exits) with real logos
+  - 14 supplied direct-investment and fund cards link to their respective websites in a new tab
+  - Exit cards remain non-linked until a destination is supplied
 - Team: 4 member cards with real photos and LinkedIn links
 - Pitch Us: PDF-only upload ≤20MB, Cloudflare Turnstile CAPTCHA, MongoDB persistence, object storage, auto-reply + team notification emails
 - Footer: Mumbai address, Mumbai/Singapore presence, correct email, LinkedIn link
@@ -64,3 +66,4 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
 | Session 1 | Brand name corrected to "OrangeTree Capital" everywhere |
 | Session 2 | Approach section: 4 flip cards with scaleX animation + back-face detail content |
 | 2026-10-05 | Updated the “How We Help” approach band to use a vertical fold; verified on desktop and mobile previews |
+| 2026-10-05 | Added verified external website links to 14 supplied portfolio cards; cards open in a new tab |
