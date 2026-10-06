@@ -36,6 +36,7 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
 - Portfolio: tabbed grid (Direct / Fund / Exits) with real logos
   - 14 supplied direct-investment and fund cards link to their respective websites in a new tab
   - Exit cards remain non-linked until a destination is supplied
+  - Dr. Sheth’s and Coupang display an “(Exited)” status beside their names
 - Team: 4 member cards with real photos and LinkedIn links
 - Pitch Us: displays the “Pitch Us” heading, founder-contact message, and “Email us at pitch@orangetreecapital.co.in” mail link
   - The former public PDF-submission form is removed from the page
@@ -72,3 +73,4 @@ Build and iteratively refine an editorial, credibility-first single-page marketi
 | 2026-10-05 | Simplified the public Pitch Us section to the requested founder-contact message; removed form and email prompt |
 | 2026-10-05 | Restored the Pitch Us heading and email contact link while keeping the public submission form removed |
 | 2026-10-05 | Updated the Pitch Us mail-link wording to “Email us at pitch@orangetreecapital.co.in” |
+| 2026-10-06 | Added “(Exited)” status labels to Dr. Sheth’s and Coupang portfolio cards |

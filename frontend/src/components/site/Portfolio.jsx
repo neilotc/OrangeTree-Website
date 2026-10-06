@@ -81,7 +81,17 @@ const Portfolio = () => {
                     )}
                   </div>
                   {p.logo && (
-                    <p className="mt-3 font-sans text-sm font-semibold text-charcoal">{p.name}</p>
+                    <p className="mt-3 font-sans text-sm font-semibold text-charcoal">
+                      {p.name}
+                      {p.status && (
+                        <span
+                          className="text-slate-warm"
+                          data-testid={`portfolio-status-${p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`}
+                        >
+                          {` (${p.status})`}
+                        </span>
+                      )}
+                    </p>
                   )}
                   <div className="mt-6">
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-warm">
