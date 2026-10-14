@@ -43,7 +43,7 @@ const Portfolio = () => {
           ))}
         </Reveal>
 
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-hairline border border-hairline">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
             {items.map((p) => {
               const Card = p.website ? motion.a : motion.div;
@@ -60,7 +60,7 @@ const Portfolio = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.4, ease: EASE }}
-                  className="group relative bg-ivory p-8 min-h-[11rem] flex flex-col justify-between hover:bg-alabaster transition-[background-color,transform] duration-300"
+                  className="group relative bg-ivory border border-hairline rounded-lg p-10 min-h-[13rem] flex flex-col justify-between hover:bg-alabaster hover:border-charcoal/30 transition-[background-color,border-color,transform] duration-300"
                   data-testid={`portfolio-item-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <div className="flex items-center gap-3 h-12">
