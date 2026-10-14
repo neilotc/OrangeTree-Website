@@ -61,18 +61,18 @@ export const PILLARS = [
 
 // type: "direct" | "fund" | "exit"
 export const PORTFOLIO = [
-  { name: "Leegality", type: "direct", sector: "LegalTech", geography: "India", logo: "/portfolio/leegality.png", website: "https://www.leegality.com/" },
+  { name: "Leegality", type: "direct", sector: "LegalTech", geography: "India", logo: "/portfolio/leegality.png", website: "https://www.leegality.com/", logoBig: true },
   { name: "Chargeup", type: "direct", sector: "EV", geography: "India", logo: "/portfolio/chargeup.png", website: "https://echargeup.com/" },
   { name: "Trukky", type: "direct", sector: "Logistics", geography: "India", logo: "/portfolio/trukky.png", website: "https://www.trukky.com/" },
   { name: "enParadigm", type: "direct", sector: "HR Tech", geography: "India", logo: "/portfolio/enparadigm.png", website: "https://www.enparadigm.com/" },
   { name: "MiClient", type: "direct", sector: "Enterprise", geography: "India", logo: "/portfolio/miclient.png", website: "https://www.miclient.ai/" },
   { name: "TakeMe2Space", type: "direct", sector: "Spacetech", geography: "India", logo: "/portfolio/takeme2space.png", website: "https://www.tm2.space/" },
   { name: "NervGen Pharma", type: "direct", sector: "Pharma", geography: "Canada", logo: "/portfolio/nervgen.png", website: "https://nervgen.com/" },
-  { name: "Motion Gestures", type: "direct", sector: "Consumer Tech", geography: "Canada", logo: "/portfolio/motion-gestures.png", website: "https://www.motiongestures.com/" },
+  { name: "Motion Gestures", type: "direct", sector: "Consumer Tech", geography: "Canada", logo: "/portfolio/motion-gestures.png", website: "https://www.motiongestures.com/", logoBig: true },
   { name: "Zerowatt", type: "direct", sector: "CleanTech", geography: "India", logo: "/portfolio/zerowatt.png", website: "https://zerowatt.co.in/" },
   { name: "Reflection AI", type: "direct", sector: "AI", geography: "US", logo: "/portfolio/reflection.png", website: "https://reflection.ai/" },
   { name: "Greenoaks Lindenwood", type: "fund", sector: "Tech Focused", geography: "US", logo: "/portfolio/greenoaks.png", website: "https://greenoaks.com/" },
-  { name: "Iron Pillar", type: "fund", sector: "Tech Focused", geography: "India / US", logo: "/portfolio/iron-pillar.png", website: "https://www.ironpillarfund.com/" },
+  { name: "Iron Pillar", type: "fund", sector: "Tech Focused", geography: "India / US", logo: "/portfolio/iron-pillar.png", website: "https://www.ironpillarfund.com/", logoBig: true },
   { name: "HealthX", type: "fund", sector: "Healthtech", geography: "Singapore", logo: "/portfolio/healthx.png", website: "https://www.healthxcapital.com/" },
   { name: "SBC Fintech", type: "fund", sector: "Fintech", geography: "Australia", logo: "/portfolio/sbc-fintech.png", website: "https://startupbootcamp.org/" },
   { name: "Dr. Sheth's", type: "exit", status: "Exited", sector: "Beauty and Personal Care", geography: "India", logo: "/portfolio/dr-sheths.png" },

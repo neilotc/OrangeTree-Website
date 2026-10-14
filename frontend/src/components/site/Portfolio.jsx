@@ -69,7 +69,7 @@ const Portfolio = () => {
                         src={p.logo}
                         alt={p.name}
                         loading="lazy"
-                        className="h-10 max-w-[11rem] w-auto object-contain object-left"
+                        className={`${p.logoBig ? "h-[3.25rem]" : "h-10"} max-w-[11rem] w-auto object-contain object-left`}
                       />
                     ) : (
                       <>
