@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Globe } from "lucide-react";
 import { Reveal, ChapterHeader, EASE } from "./Reveal";
 import { PORTFOLIO, PORTFOLIO_DISCLAIMER } from "@/data/content";
 
@@ -46,16 +47,10 @@ const Portfolio = () => {
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
             {items.map((p) => {
-              const Card = p.website ? motion.a : motion.div;
-              const cardProps = p.website
-                ? { href: p.website, target: "_blank", rel: "noreferrer", "aria-label": `Visit ${p.name}` }
-                : {};
-
               return (
-                <Card
+                <motion.div
                   layout
                   key={p.name}
-                  {...cardProps}
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
@@ -101,7 +96,19 @@ const Portfolio = () => {
                       {p.sector}
                     </p>
                   </div>
-                </Card>
+                  {p.website && (
+                    <a
+                      href={p.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${p.name} website`}
+                      data-testid={`portfolio-website-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="absolute bottom-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-alabaster text-charcoal border border-hairline hover:bg-ochre hover:text-ivory hover:border-ochre transition-colors duration-300"
+                    >
+                      <Globe size={16} />
+                    </a>
+                  )}
+                </motion.div>
               );
             })}
           </AnimatePresence>
