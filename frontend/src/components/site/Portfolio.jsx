@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Globe, RotateCcw } from "lucide-react";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { Globe } from "lucide-react";
 import { Reveal, ChapterHeader, EASE } from "./Reveal";
 import { PORTFOLIO, PORTFOLIO_DISCLAIMER } from "@/data/content";
 
@@ -13,16 +13,51 @@ const TABS = [
 
 const slugify = (s) => s.toLowerCase().replace(/\s+/g, "-");
 
-const CardShell = ({ children, className = "" }) => (
-  <div
-    className={`bg-ivory border border-hairline rounded-lg p-10 min-h-[13rem] flex flex-col justify-between hover:border-charcoal/30 transition-[border-color] duration-300 ${className}`}
+/* Shared fold hook — same speed/easing as the Approach cards (Edge.jsx) */
+const useFlip = () => {
+  const [showBack, setShowBack] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const controls = useAnimation();
+
+  const flip = async () => {
+    if (busy) return;
+    setBusy(true);
+    await controls.start({
+      scaleX: 0,
+      transition: { duration: 0.17, ease: [0.4, 0, 1, 1] },
+    });
+    setShowBack((p) => !p);
+    await new Promise((r) => requestAnimationFrame(r));
+    await controls.start({
+      scaleX: 1,
+      transition: { duration: 0.17, ease: [0, 0, 0.6, 1] },
+    });
+    setBusy(false);
+  };
+
+  return { showBack, controls, flip };
+};
+
+const WebsiteIcon = ({ p, tone = "light" }) => (
+  <a
+    href={p.website}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(e) => e.stopPropagation()}
+    aria-label={`Visit ${p.name} website`}
+    data-testid={`portfolio-website-${slugify(p.name)}`}
+    className={`absolute bottom-4 right-4 w-9 h-9 flex items-center justify-center rounded-full border transition-colors duration-300 ${
+      tone === "dark"
+        ? "bg-obsidian text-ochre/70 border-ochre/20 hover:bg-ochre hover:text-ivory hover:border-ochre"
+        : "bg-alabaster text-charcoal border-hairline hover:bg-ochre hover:text-ivory hover:border-ochre"
+    }`}
   >
-    {children}
-  </div>
+    <Globe size={16} />
+  </a>
 );
 
-const CardFace = ({ p }) => (
-  <>
+const FrontFace = ({ p }) => (
+  <div className="h-full border border-hairline bg-ivory p-8 flex flex-col justify-between hover:bg-alabaster transition-colors duration-300">
     <div className="flex items-center gap-3 h-12">
       {p.logo ? (
         <img
@@ -33,7 +68,7 @@ const CardFace = ({ p }) => (
         />
       ) : (
         <>
-          <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg group-hover:bg-ochre transition-colors duration-300">
+          <span className="w-10 h-10 flex items-center justify-center rounded-sm bg-charcoal text-ivory font-serif text-lg">
             {p.name.charAt(0)}
           </span>
           <span className="font-sans font-semibold text-charcoal">{p.name}</span>
@@ -61,29 +96,28 @@ const CardFace = ({ p }) => (
         {p.sector}
       </p>
     </div>
-  </>
+  </div>
 );
 
-const WebsiteIcon = ({ p, tone = "light" }) => (
-  <a
-    href={p.website}
-    target="_blank"
-    rel="noopener noreferrer"
-    onClick={(e) => e.stopPropagation()}
-    aria-label={`Visit ${p.name} website`}
-    data-testid={`portfolio-website-${slugify(p.name)}`}
-    className={`absolute bottom-4 right-4 w-9 h-9 flex items-center justify-center rounded-full border transition-colors duration-300 ${
-      tone === "dark"
-        ? "bg-charcoal/40 text-ivory border-ivory/20 hover:bg-ochre hover:text-ivory hover:border-ochre"
-        : "bg-alabaster text-charcoal border-hairline hover:bg-ochre hover:text-ivory hover:border-ochre"
-    }`}
+const BackFace = ({ p }) => (
+  <div
+    className="h-full border border-ochre/20 bg-obsidian p-8 flex flex-col justify-between"
+    data-testid={`portfolio-back-${slugify(p.name)}`}
   >
-    <Globe size={16} />
-  </a>
+    <div className="flex items-center justify-between">
+      <span className="font-serif text-xl text-ochre leading-snug">{p.name}</span>
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ivory/20">
+        {p.sector}
+      </span>
+    </div>
+    <p className="font-sans text-sm leading-relaxed text-ivory/70">
+      {p.description}
+    </p>
+  </div>
 );
 
 const PortfolioCard = ({ p }) => {
-  const [flipped, setFlipped] = useState(false);
+  const { showBack, controls, flip } = useFlip();
   const canFlip = !!p.description;
   const slug = slugify(p.name);
 
@@ -94,61 +128,19 @@ const PortfolioCard = ({ p }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.4, ease: EASE }}
-      className="group relative min-h-[13rem] [perspective:1400px]"
+      className="relative h-[15rem]"
       data-testid={`portfolio-item-${slug}`}
     >
-      {canFlip ? (
-        <div
-          onClick={() => setFlipped((f) => !f)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              setFlipped((f) => !f);
-            }
-          }}
-          aria-label={`Flip ${p.name} card`}
-          data-testid={`portfolio-flip-${slug}`}
-          className={`relative grid cursor-pointer transition-transform duration-[600ms] [transform-style:preserve-3d] ${
-            flipped ? "[transform:rotateY(180deg)]" : ""
-          }`}
-        >
-          {/* Front */}
-          <div className="[grid-area:1/1] [backface-visibility:hidden] relative">
-            <CardShell className="bg-ivory">
-              <CardFace p={p} />
-            </CardShell>
-            {p.website && <WebsiteIcon p={p} tone="light" />}
-          </div>
-
-          {/* Back */}
-          <div
-            className="[grid-area:1/1] [backface-visibility:hidden] [transform:rotateY(180deg)] relative"
-            data-testid={`portfolio-back-${slug}`}
-          >
-            <div className="bg-charcoal border border-charcoal rounded-lg p-10 min-h-[13rem] h-full flex flex-col justify-between">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ivory/50">
-                {p.name}
-              </p>
-              <p className="font-serif text-base lg:text-lg leading-relaxed text-ivory">
-                {p.description}
-              </p>
-              <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-ivory/40">
-                <RotateCcw size={11} /> Tap to flip back
-              </span>
-            </div>
-            {p.website && <WebsiteIcon p={p} tone="dark" />}
-          </div>
-        </div>
-      ) : (
-        <div className="relative">
-          <CardShell className="bg-ivory hover:bg-alabaster transition-[background-color,border-color] duration-300">
-            <CardFace p={p} />
-          </CardShell>
-          {p.website && <WebsiteIcon p={p} tone="light" />}
-        </div>
-      )}
+      <div
+        className={canFlip ? "cursor-pointer h-full" : "h-full"}
+        onClick={canFlip ? flip : undefined}
+        data-testid={canFlip ? `portfolio-flip-${slug}` : undefined}
+      >
+        <motion.div animate={controls} initial={{ scaleX: 1 }} className="h-full">
+          {showBack ? <BackFace p={p} /> : <FrontFace p={p} />}
+        </motion.div>
+      </div>
+      {p.website && <WebsiteIcon p={p} tone={showBack ? "dark" : "light"} />}
     </motion.div>
   );
 };
