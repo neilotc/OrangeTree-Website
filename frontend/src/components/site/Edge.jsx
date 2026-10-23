@@ -7,7 +7,6 @@ import {
   Brain,
   Users,
   ChevronRight,
-  RotateCcw,
 } from "lucide-react";
 import { Reveal, ChapterHeader } from "./Reveal";
 import { APPROACH } from "@/data/content";
@@ -70,7 +69,7 @@ const ApproachCard = ({ c, index }) => {
       <motion.div animate={controls} initial={{ scaleX: 1 }} className="h-full">
         {showBack ? (
           /* ── Back face ── */
-          <div className="h-full border border-ochre/20 bg-obsidian p-8 lg:p-12 flex flex-col justify-between">
+          <div className="h-full border border-ochre/20 rounded-lg bg-obsidian p-8 lg:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between">
               <span className="w-9 h-9 flex items-center justify-center rounded-full border border-ochre/20 text-ochre/60">
                 <Icon size={16} />
@@ -87,14 +86,10 @@ const ApproachCard = ({ c, index }) => {
                 {c.detail}
               </p>
             </div>
-            <div className="flex items-center gap-2 text-xs font-sans text-ivory/30">
-              <RotateCcw size={11} />
-              <span>Tap to go back</span>
-            </div>
           </div>
         ) : (
           /* ── Front face ── */
-          <div className="h-full border border-hairline bg-ivory p-8 lg:p-12 flex flex-col justify-between hover:bg-alabaster transition-colors duration-300">
+          <div className="h-full border border-hairline rounded-lg bg-ivory p-8 lg:p-12 flex flex-col justify-between hover:bg-alabaster transition-colors duration-300">
             <div className="flex items-center justify-between">
               <span className="w-11 h-11 flex items-center justify-center rounded-full border border-ochre/40 text-ochre">
                 <Icon size={19} />
@@ -130,41 +125,47 @@ const ApproachBand = ({ band }) => {
       onClick={flip}
       data-testid="approach-band-how-we-help"
     >
-      <motion.div animate={controls} initial={{ scaleY: 1 }}>
-        {showBack ? (
-          /* ── Back face ── */
-          <div className="border border-ochre/20 bg-obsidian px-8 lg:px-12 py-10 lg:py-14 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-16">
-            <div className="shrink-0 flex items-center gap-4">
-              <span className="w-10 h-10 flex items-center justify-center rounded-full border border-ochre/20 text-ochre/60">
-                <Users size={18} />
-              </span>
-              <span className="font-serif text-2xl lg:text-3xl text-ochre">
-                {band.title}
-              </span>
-            </div>
-            <span className="hidden sm:block h-10 w-px bg-ochre/20 shrink-0" />
-            <p className="font-sans text-sm leading-relaxed text-ivory/70">
-              {band.detail}
-            </p>
+      <motion.div animate={controls} initial={{ scaleY: 1 }} className="grid">
+        {/* ── Back face ── */}
+        <div
+          className={`[grid-area:1/1] border border-ochre/20 rounded-lg bg-obsidian px-8 lg:px-12 py-10 lg:py-14 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-16 ${
+            showBack ? "visible" : "invisible"
+          }`}
+        >
+          <div className="shrink-0 flex items-center gap-4">
+            <span className="w-10 h-10 flex items-center justify-center rounded-full border border-ochre/20 text-ochre/60">
+              <Users size={18} />
+            </span>
+            <span className="font-serif text-2xl lg:text-3xl text-ochre">
+              {band.title}
+            </span>
           </div>
-        ) : (
-          /* ── Front face ── */
-          <div className="group border border-hairline bg-ivory hover:bg-alabaster transition-colors duration-300 px-8 lg:px-12 py-10 lg:py-14 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-16">
-            <div className="shrink-0 flex items-center gap-5">
-              <span className="font-serif text-2xl lg:text-3xl text-ochre-deep group-hover:text-ochre transition-colors duration-300">
-                {band.title}
-              </span>
-              <ArrowUpRight
-                size={22}
-                className="text-ochre transition-transform duration-300 group-hover:rotate-45"
-              />
-            </div>
-            <span className="hidden sm:block h-10 w-px bg-hairline shrink-0" />
-            <p className="font-serif italic text-xl lg:text-2xl text-charcoal">
-              {band.statement}
-            </p>
+          <span className="hidden sm:block h-10 w-px bg-ochre/20 shrink-0" />
+          <p className="font-sans text-sm leading-relaxed text-ivory/70">
+            {band.detail}
+          </p>
+        </div>
+
+        {/* ── Front face ── */}
+        <div
+          className={`group [grid-area:1/1] border border-hairline rounded-lg bg-ivory hover:bg-alabaster transition-colors duration-300 px-8 lg:px-12 py-10 lg:py-14 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-16 ${
+            showBack ? "invisible" : "visible"
+          }`}
+        >
+          <div className="shrink-0 flex items-center gap-5">
+            <span className="font-serif text-2xl lg:text-3xl text-ochre-deep group-hover:text-ochre transition-colors duration-300">
+              {band.title}
+            </span>
+            <ArrowUpRight
+              size={22}
+              className="text-ochre transition-transform duration-300 group-hover:rotate-45"
+            />
           </div>
-        )}
+          <span className="hidden sm:block h-10 w-px bg-hairline shrink-0" />
+          <p className="font-serif italic text-xl lg:text-2xl text-charcoal">
+            {band.statement}
+          </p>
+        </div>
       </motion.div>
     </div>
   );
