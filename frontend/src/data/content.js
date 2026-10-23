@@ -75,8 +75,8 @@ export const PORTFOLIO = [
   { name: "Iron Pillar", type: "fund", sector: "Tech Focused", geography: "India / US", logo: "/portfolio/iron-pillar.png", website: "https://www.ironpillarfund.com/", logoBig: true },
   { name: "HealthX", type: "fund", sector: "Healthtech", geography: "Singapore", logo: "/portfolio/healthx.png", website: "https://www.healthxcapital.com/" },
   { name: "SBC Fintech", type: "fund", sector: "Fintech", geography: "Australia", logo: "/portfolio/sbc-fintech.png", website: "https://startupbootcamp.org/" },
-  { name: "Dr. Sheth's", type: "exit", status: "Exited", sector: "Beauty and Personal Care", geography: "India", logo: "/portfolio/dr-sheths.png" },
-  { name: "Coupang", type: "exit", status: "Exited", sector: "E-Commerce", geography: "South Korea", logo: "/portfolio/coupang.png" },
+  { name: "Dr. Sheth's", type: "exit", status: "Exited", sector: "Beauty and Personal Care", geography: "India", logo: "/portfolio/dr-sheths.png", description: "A dermatologist-formulated skincare brand acquired by Honasa Consumer, the parent company of Mamaearth, in 2022." },
+  { name: "Coupang", type: "exit", status: "Exited", sector: "E-Commerce", geography: "South Korea", logo: "/portfolio/coupang.png", description: "A leading South Korean e-commerce and technology company that went public on the NYSE in 2021 (NYSE: CPNG)." },
 ];
 
 export const PORTFOLIO_DISCLAIMER =
