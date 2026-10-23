@@ -57,7 +57,7 @@ const WebsiteIcon = ({ p, tone = "light" }) => (
 );
 
 const FrontFace = ({ p }) => (
-  <div className="h-full border border-hairline bg-ivory p-8 flex flex-col justify-between hover:bg-alabaster transition-colors duration-300">
+  <div className="h-full border border-hairline rounded-lg bg-ivory p-8 flex flex-col justify-between hover:bg-alabaster transition-colors duration-300">
     <div className="flex items-center gap-3 h-12">
       {p.logo ? (
         <img
@@ -101,7 +101,7 @@ const FrontFace = ({ p }) => (
 
 const BackFace = ({ p }) => (
   <div
-    className="h-full border border-ochre/20 bg-obsidian p-8 flex flex-col justify-between"
+    className="h-full border border-ochre/20 rounded-lg bg-obsidian p-8 flex flex-col justify-between"
     data-testid={`portfolio-back-${slugify(p.name)}`}
   >
     <div className="flex items-center justify-between">
