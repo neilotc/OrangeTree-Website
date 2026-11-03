@@ -12,11 +12,11 @@ const WhatWeDo = () => (
       label="What We Do"
       title="Three ways we put capital to work"
     />
-    <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-l border-hairline">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       {PILLARS.map((p, i) => (
-        <Reveal key={p.number} delay={i * 0.12} className="border-b border-r border-hairline">
+        <Reveal key={p.number} delay={i * 0.12}>
           <div
-            className="group p-8 lg:p-12 h-full flex flex-col hover:bg-alabaster transition-colors duration-300"
+            className="group p-8 lg:p-12 h-full flex flex-col border border-hairline rounded-lg hover:bg-alabaster hover:border-charcoal/30 transition-[background-color,border-color] duration-300"
             data-testid={`pillar-card-${p.number}`}
           >
             <div className="flex items-center gap-5 h-12 mb-10">
