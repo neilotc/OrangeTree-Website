@@ -91,8 +91,8 @@ const HeroBackdrop = ({ glowY }) => (
       </circle>
 
       {/* Cube cluster echoing the OC lattice */}
-      <Cube cx={430} cy={300} s={104} delay={0} dur={8} intensity={1} />
-      <Cube cx={430} cy={494} s={104} delay={0.6} dur={9} intensity={0.8} />
+      <Cube cx={430} cy={300} s={83} delay={0} dur={8} intensity={1} />
+      <Cube cx={430} cy={494} s={83} delay={0.6} dur={9} intensity={0.8} />
       <Cube cx={296} cy={600} s={70} delay={1.1} dur={7.5} intensity={0.55} />
       <Cube cx={540} cy={636} s={70} delay={0.3} dur={8.5} intensity={0.45} />
     </svg>
